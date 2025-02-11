@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/liberation-corps-esprit/static/css/main.e923433f.css",
+    "main.js": "/liberation-corps-esprit/static/js/main.d86f20cc.js",
+    "static/media/logo-2025.png": "/liberation-corps-esprit/static/media/logo-2025.f95a0646110afbc8a886.png",
+    "index.html": "/liberation-corps-esprit/index.html",
+    "main.e923433f.css.map": "/liberation-corps-esprit/static/css/main.e923433f.css.map",
+    "main.d86f20cc.js.map": "/liberation-corps-esprit/static/js/main.d86f20cc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e923433f.css",
+    "static/js/main.d86f20cc.js"
+  ]
+}
