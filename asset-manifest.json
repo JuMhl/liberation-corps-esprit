@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/liberation-corps-esprit/static/css/main.e923433f.css",
-    "main.js": "/liberation-corps-esprit/static/js/main.d86f20cc.js",
-    "static/media/logo-2025.png": "/liberation-corps-esprit/static/media/logo-2025.f95a0646110afbc8a886.png",
-    "index.html": "/liberation-corps-esprit/index.html",
-    "main.e923433f.css.map": "/liberation-corps-esprit/static/css/main.e923433f.css.map",
-    "main.d86f20cc.js.map": "/liberation-corps-esprit/static/js/main.d86f20cc.js.map"
+    "main.css": "/static/css/main.e923433f.css",
+    "main.js": "/static/js/main.689b15b6.js",
+    "static/media/logo-2025.png": "/static/media/logo-2025.f95a0646110afbc8a886.png",
+    "index.html": "/index.html",
+    "main.e923433f.css.map": "/static/css/main.e923433f.css.map",
+    "main.689b15b6.js.map": "/static/js/main.689b15b6.js.map"
   },
   "entrypoints": [
     "static/css/main.e923433f.css",
-    "static/js/main.d86f20cc.js"
+    "static/js/main.689b15b6.js"
   ]
 }
