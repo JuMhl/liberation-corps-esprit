@@ -1,15 +1,15 @@
-import logo from './logo-2025.png';
+import logo from './assets/logo-2025.png';
+import Footer from './components/footer/Footer';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Liberation du corps et de l'esprit
-        </p>
-      </header>
+        <p>Site en cours de construction...</p>
+      </div>
+      <Footer />
     </div>
   );
 }
