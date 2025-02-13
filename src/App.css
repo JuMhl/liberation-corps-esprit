@@ -22,6 +22,11 @@
   pointer-events: none;
 }
 
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
 .App-link {
   color: #61dafb;
 }
