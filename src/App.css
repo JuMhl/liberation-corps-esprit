@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   background-color: #F3EFE9;
+  background-image: url("./assets/background-laptop.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -8,6 +11,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #B290B6;
+  
+  @media (max-width: 1025px) {
+    background-image: url("./assets/background-phone.png");
+  }
 }
 
 .App-logo {
