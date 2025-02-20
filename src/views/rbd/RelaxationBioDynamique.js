@@ -4,8 +4,10 @@ import './RelaxationBioDynamique.css';
 
 const RelaxationBioDynamique = () => {
   return (
-    <div>
-      <p>Site en cours de construction...</p>
+    <div className="rbd">
+      <div className="rbd-container">
+        <p>Site en cours de construction...</p>
+      </div>
     </div>
   );
 };

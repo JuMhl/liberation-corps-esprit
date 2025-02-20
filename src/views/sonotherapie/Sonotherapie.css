@@ -1,5 +1,10 @@
 
-.home-logo {
-    height: 40vmin;
-    pointer-events: none;
+.sonotherapie {
+  text-align: start;
+  margin: 10px 20px;
+  font-size: 14px;
+
+  @media (max-width: 650px) {
+    font-size: 10px;
   }
+}

@@ -1,4 +1,4 @@
-.App {
+.app {
   text-align: center;
   background-color: #F3EFE9;
   background-image: url("./assets/background-laptop.png");
@@ -15,8 +15,4 @@
   @media (max-width: 1025px) {
     background-image: url("./assets/background-phone.png");
   }
-}
-
-.App-link {
-  color: #1ec5cb;
 }

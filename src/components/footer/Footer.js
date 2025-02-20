@@ -15,10 +15,10 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={instaLogo} className="logo" alt="insta" />
+            <img src={instaLogo} className="footer-logo" alt="insta" />
           </a>
           <a href="https://www.facebook.com/share/1LAdidvrxy/" target="_blank" rel="noopener noreferrer">
-            <img src={fbLogo} className="logo" alt="fb" />
+            <img src={fbLogo} className="footer-logo" alt="fb" />
           </a>
         </div>
       </div>

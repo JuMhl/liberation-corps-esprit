@@ -5,9 +5,11 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <div>
-      <img src={logo} className="home-logo" alt="logo" />
-      <p>Site en cours de construction...</p>
+    <div className="home">
+      <div className="home-container">
+        <img src={logo} className="home-logo" alt="logo" />
+        <p>Site en cours de construction...</p>
+      </div>
     </div>
   );
 };

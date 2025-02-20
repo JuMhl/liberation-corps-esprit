@@ -4,8 +4,10 @@ import './KateriCreations.css';
 
 const KateriCreations = () => {
   return (
-    <div>
-      <p>Site en cours de construction...</p>
+    <div className="kateri-creations">
+      <div className="kateri-creations-container">
+        <p>Site en cours de construction...</p>
+      </div>
     </div>
   );
 };
