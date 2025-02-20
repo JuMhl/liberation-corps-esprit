@@ -5,19 +5,21 @@ import Home from './views/home/Home';
 import RelaxationBioDynamique from './views/rbd/RelaxationBioDynamique';
 import KateriCreations from './views/katericreations/KateriCreations';
 import Sonotherapie from './views/sonotherapie/Sonotherapie';
+import Contact from './views/contact/Contact';
 
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sonotherapie" element={<Sonotherapie />} />
           <Route path="/relaxation-bio-dynamique" element={<RelaxationBioDynamique />} />
           <Route path="/kateri-creations" element={<KateriCreations />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>

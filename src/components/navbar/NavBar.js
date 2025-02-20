@@ -10,29 +10,26 @@ const NavBar = () => {
     { title: 'Accueil', path: '/' },
     { title: 'Sonothérapie', path: '/sonotherapie' },
     { title: 'Relaxation Bio-Dynamique', path: '/relaxation-bio-dynamique' },
-    { title: 'Kateri Créations', path: '/kateri-creations' }
+    { title: 'Kateri Créations', path: '/kateri-creations' },
+    { title: 'Contact', path: '/contact' }
   ];
 
   return (
     <div className="navbar">
-      <div className="container">
+      <div className="nav-container">
         <a to="/">
-          <img src={mandala} className="logo animated" alt="logo" />
+          <img src={mandala} className="nav-logo animated" alt="logo" />
         </a>
         <div className="container-links">
           {links.map((link, index) => {
             return (
-              <NavLink
-                key={index}
-                className='link'
-                to={link.path}
-              >
+              <NavLink key={index} className="link" to={link.path}>
                 {link.title}
               </NavLink>
             );
           })}
         </div>
-        <img src={dreamcatcher} className="logo" alt="logo" />
+        <img src={dreamcatcher} className="nav-logo-dreamcatcher" alt="logo" />
       </div>
     </div>
   );

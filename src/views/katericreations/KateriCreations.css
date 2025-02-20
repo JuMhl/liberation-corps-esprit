@@ -1,5 +1,16 @@
+.kateri-creations {
+  width: 100%;
+  height: calc(100vh - 110px);
 
-.home-logo {
-    height: 40vmin;
-    pointer-events: none;
+  @media (max-width: 650px) {
+    height: calc(100vh - 75px);
   }
+}
+
+.kateri-creations-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
