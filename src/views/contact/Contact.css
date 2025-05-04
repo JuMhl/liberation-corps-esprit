@@ -20,19 +20,31 @@
   display: inline-block;
   text-decoration: none; /* Supprime le soulignement par défaut */
   color: white; /* Couleur du texte */
-  background-color: #38bcbc; /* Couleur de fond (vert WhatsApp) */
+  background-color: #2C9696; /* Couleur de fond (vert WhatsApp) */
   padding: 10px 20px; /* Ajoute de l'espace autour du texte */
   border-radius: 5px; /* Arrondit les coins */
-  font-size: 16px; /* Taille du texte */
+  font-size: 1rem; /* Taille du texte */
   font-weight: bold; /* Met le texte en gras */
   transition: background-color 0.3s ease, transform 0.2s ease; /* Ajoute une transition pour les effets */
 }
 
 .contact-link:hover {
-  background-color: #2C9696; /* Change la couleur de fond au survol */
+  background-color: #268282; /* Change la couleur de fond au survol */
   transform: scale(1.05); /* Agrandit légèrement le lien au survol */
 }
 
 .contact-link:active {
   transform: scale(0.95); /* Réduit légèrement le lien lorsqu'il est cliqué */
+}
+
+@media (max-width: 650px) {
+  .contact-container {
+    font-size: 1rem; /* Réduit la taille du texte pour les petits écrans */
+    padding: 10px; /* Réduit les marges internes pour les petits écrans */
+  }
+
+  .contact-link {
+    font-size: 0.75rem; /* Réduit la taille du texte pour les petits écrans */
+    padding: 8px 16px; /* Réduit l'espace autour du texte */
+  }
 }
