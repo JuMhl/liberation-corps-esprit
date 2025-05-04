@@ -1,7 +1,11 @@
 .navbar {
   background-color: #1EC6CB22;
   width: 100%;
-  height: 60px;
+  height: 60px;  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile */  
+  top: 0;  
+  z-index: 1000; /* Assure que la navbar reste au-dessus des autres éléments */
+  position: fixed; /* Fixe la navbar en haut de la page */
 
   @media (max-width: 650px) {
     height: 35px;
@@ -13,7 +17,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px 10px;
-  gap:100px;
+  gap:100px;  
+  margin: 0 auto; /* Centre la navbar */
+
 
   @media (max-width: 1200px) {
     gap: 50px;
@@ -32,7 +38,8 @@
   color: #B290B6;
   text-decoration: none;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: bold;  
+  transition: color 0.3s ease; /* Ajoute une transition pour les changements de couleur */
 
   @media (max-width: 1200px) {
     font-size: 18px;
@@ -47,10 +54,13 @@
   }
 }
 
+.link:hover {
+  color: #2C9696; /* Change la couleur au survol */
+}
+
 .active {
   color: #2C9696;
 }
-
 
 .nav-logo{
   height: 40px;
