@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/footer/Footer';
 import NavBar from './components/navbar/NavBar';
 import Home from './views/home/Home';
-import RelaxationBioDynamique from './views/rbd/RelaxationBioDynamique';
-import KateriCreations from './views/katericreations/KateriCreations';
-import Sonotherapie from './views/sonotherapie/Sonotherapie';
+// import RelaxationBioDynamique from './views/rbd/RelaxationBioDynamique';
+// import KateriCreations from './views/katericreations/KateriCreations';
+// import Sonotherapie from './views/sonotherapie/Sonotherapie';
 import Contact from './views/contact/Contact';
 import Programme from './views/programme/Programme';
 

@@ -18,9 +18,7 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <div className="nav-container">
-        <a to="/">
-          <img src={mandala} className="nav-logo" alt="logo" />
-        </a>
+        <img src={mandala} className="nav-logo" alt="logo" />
         <div className="container-links">
           {links.map((link, index) => {
             return (
