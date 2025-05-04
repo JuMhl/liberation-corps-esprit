@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="contact">
       <div className="contact-container">
-        <p>Contactez-moi sur Whatsapp buisness via ce lien :</p>
+        <p>Contactez-moi sur Whatsapp business via ce lien :</p>
         <a
           className="contact-link"
           href="https://wa.me/message/WMPXBDYMIGODH1"

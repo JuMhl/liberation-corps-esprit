@@ -9,7 +9,7 @@
 
 .title {
     font-size: 20px;
-    color: #72D1D2;
+    color: #2C9696;
 
     @media (max-width: 650px) {
       font-size: 12px;

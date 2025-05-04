@@ -20,7 +20,7 @@
   display: inline-block;
   text-decoration: none; /* Supprime le soulignement par défaut */
   color: white; /* Couleur du texte */
-  background-color: #82D7D3; /* Couleur de fond (vert WhatsApp) */
+  background-color: #38bcbc; /* Couleur de fond (vert WhatsApp) */
   padding: 10px 20px; /* Ajoute de l'espace autour du texte */
   border-radius: 5px; /* Arrondit les coins */
   font-size: 16px; /* Taille du texte */
@@ -29,7 +29,7 @@
 }
 
 .contact-link:hover {
-  background-color: #25c8cd; /* Change la couleur de fond au survol */
+  background-color: #2C9696; /* Change la couleur de fond au survol */
   transform: scale(1.05); /* Agrandit légèrement le lien au survol */
 }
 
