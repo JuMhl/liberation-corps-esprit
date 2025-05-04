@@ -8,9 +8,10 @@ import './NavBar.css';
 const NavBar = () => {
   const links = [
     { title: 'Accueil', path: '/' },
-    { title: 'Sonothérapie', path: '/sonotherapie' },
-    { title: 'Relaxation Bio-Dynamique', path: '/relaxation-bio-dynamique' },
-    { title: 'Kateri Créations', path: '/kateri-creations' },
+    { title: 'Programme', path: '/programme' },
+    // { title: 'Sonothérapie', path: '/sonotherapie' },
+    // { title: 'Relaxation Bio-Dynamique', path: '/relaxation-bio-dynamique' },
+    // { title: 'Kateri Créations', path: '/kateri-creations' },
     { title: 'Contact', path: '/contact' }
   ];
 
@@ -18,7 +19,7 @@ const NavBar = () => {
     <div className="navbar">
       <div className="nav-container">
         <a to="/">
-          <img src={mandala} className="nav-logo animated" alt="logo" />
+          <img src={mandala} className="nav-logo" alt="logo" />
         </a>
         <div className="container-links">
           {links.map((link, index) => {
