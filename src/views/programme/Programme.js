@@ -1,5 +1,5 @@
 import React from 'react';
-import programmeMai from '../../assets/programme-mai-2025.jpg';
+import programmeMai from '../../assets/programme-mai-2025.png';
 
 import './Programme.css';
 
