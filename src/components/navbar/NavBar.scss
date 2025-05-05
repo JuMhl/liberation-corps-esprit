@@ -1,5 +1,7 @@
+@import '../../styles/constantes.scss';
+
 .navbar {
-  background-color: #1EC6CB22;
+  background-color: #D7E9E5;
   width: 100%;
   height: 60px;  
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile */  
@@ -53,11 +55,11 @@
 }
 
 .link:hover {
-  color: #2C9696; /* Change la couleur au survol */
+  color: $primary-color; /* Change la couleur au survol */
 }
 
 .active {
-  color: #2C9696;
+  color: $primary-color;
 }
 
 .nav-logo{

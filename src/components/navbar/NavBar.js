@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import mandala from '../../assets/mandala-violet.png';
 import dreamcatcher from '../../assets/attrape-reves.png';
 
-import './NavBar.css';
+import './NavBar.scss';
 
 const NavBar = () => {
   const links = [

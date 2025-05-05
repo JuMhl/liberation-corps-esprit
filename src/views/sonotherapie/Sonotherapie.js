@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Sonotherapie.css';
+import './Sonotherapie.scss';
 
 const Sonotherapie = () => {
   return (

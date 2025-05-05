@@ -1,3 +1,5 @@
+@import '../../styles/constantes.scss';
+
 html, body {
   margin: 0;
   padding: 0;
@@ -35,7 +37,7 @@ html, body {
   padding: 0 12em; /* Ajoute un peu d'espace autour du contenu */
   font-size: 1.2rem; /* Texte plus grand */
   line-height: 1.8; /* Espacement entre les lignes pour une meilleure lisibilité */
-  color: #2C9696; /* Couleur du texte */
+  color: $primary-color; /* Couleur du texte */
   margin-bottom: 1.25rem; /* Espacement entre les paragraphes */
   word-wrap: break-word; /* Permet de couper les mots longs si nécessaire */
 }

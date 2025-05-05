@@ -8,7 +8,7 @@ import Home from './views/home/Home';
 import Contact from './views/contact/Contact';
 import Programme from './views/programme/Programme';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

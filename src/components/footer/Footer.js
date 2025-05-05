@@ -3,7 +3,7 @@ import instaLogo from '../../assets/instagram.svg';
 import fbLogo from '../../assets/fb.png';
 import whatsappLogo from '../../assets/logo-whatsapp.svg';
 
-import './Footer.css';
+import './Footer.scss';
 
 const Footer = () => {
   return (

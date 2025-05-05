@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './RelaxationBioDynamique.css';
+import './RelaxationBioDynamique.scss';
 
 const RelaxationBioDynamique = () => {
   return (

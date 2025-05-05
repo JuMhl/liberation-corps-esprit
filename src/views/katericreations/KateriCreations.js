@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './KateriCreations.css';
+import './KateriCreations.scss';
 
 const KateriCreations = () => {
   return (
