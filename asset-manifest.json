@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.21209f2b.css",
+    "main.css": "/static/css/main.53798e4b.css",
     "main.js": "/static/js/main.a7a3b103.js",
     "static/media/logo-2025.png": "/static/media/logo-2025.ab8eaa0d94bcc968701c.png",
     "static/media/background-laptop.png": "/static/media/background-laptop.3048b57ab0bd68be3ef2.png",
@@ -11,11 +11,11 @@
     "static/media/instagram.svg": "/static/media/instagram.ed267088e9adc5b4b03c00b3f73f78e4.svg",
     "static/media/logo-whatsapp.svg": "/static/media/logo-whatsapp.bdc22b7242978991392ba75cbc43dad6.svg",
     "index.html": "/index.html",
-    "main.21209f2b.css.map": "/static/css/main.21209f2b.css.map",
+    "main.53798e4b.css.map": "/static/css/main.53798e4b.css.map",
     "main.a7a3b103.js.map": "/static/js/main.a7a3b103.js.map"
   },
   "entrypoints": [
-    "static/css/main.21209f2b.css",
+    "static/css/main.53798e4b.css",
     "static/js/main.a7a3b103.js"
   ]
 }
