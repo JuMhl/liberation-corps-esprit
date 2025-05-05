@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.53798e4b.css",
-    "main.js": "/static/js/main.a7a3b103.js",
+    "main.js": "/static/js/main.67812dc1.js",
+    "static/media/programme-mai-2025.png": "/static/media/programme-mai-2025.b55c90ec46b4ab3a00a9.png",
     "static/media/logo-2025.png": "/static/media/logo-2025.ab8eaa0d94bcc968701c.png",
     "static/media/background-laptop.png": "/static/media/background-laptop.3048b57ab0bd68be3ef2.png",
-    "static/media/programme-mai-2025.jpg": "/static/media/programme-mai-2025.7fd760ed0fd07017fafb.jpg",
     "static/media/background-phone.png": "/static/media/background-phone.87269abe2e3da380571f.png",
     "static/media/attrape-reves.png": "/static/media/attrape-reves.1f6a0195763d45f05924.png",
     "static/media/mandala-violet.png": "/static/media/mandala-violet.e2600f20ed3737ac8545.png",
@@ -12,10 +12,10 @@
     "static/media/logo-whatsapp.svg": "/static/media/logo-whatsapp.bdc22b7242978991392ba75cbc43dad6.svg",
     "index.html": "/index.html",
     "main.53798e4b.css.map": "/static/css/main.53798e4b.css.map",
-    "main.a7a3b103.js.map": "/static/js/main.a7a3b103.js.map"
+    "main.67812dc1.js.map": "/static/js/main.67812dc1.js.map"
   },
   "entrypoints": [
     "static/css/main.53798e4b.css",
-    "static/js/main.a7a3b103.js"
+    "static/js/main.67812dc1.js"
   ]
 }
