@@ -42,17 +42,13 @@ html, body {
 
 /* Media query pour les petits écrans */
 @media (max-width: 650px) {
-  .home-container {
-    padding: 10px; /* Réduit les marges internes pour les petits écrans */
-    gap: 15px; /* Réduit l'espace entre les éléments */
-  }
 
   .home-logo {
-    height: 70px; /* Réduit la taille du logo pour les petits écrans */
-    margin-bottom: 15px; /* Ajuste l'espace entre le logo et le texte */
-  }
+    height: 7rem; /* Taille du logo */
+    padding: 0.5rem;  }
 
-  .home-container p {
+  .home-container p {  
+    padding: 0 1em; /* Ajoute un peu d'espace autour du contenu */
     font-size: 1rem; /* Réduit la taille du texte pour les petits écrans */
     line-height: 1.5; /* Ajuste l'espacement entre les lignes */
     margin-bottom: 10px; /* Réduit l'espacement entre les paragraphes */

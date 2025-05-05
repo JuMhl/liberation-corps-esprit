@@ -5,7 +5,6 @@
 
   @media (max-width: 650px) {    
     height: calc(100vh - 75px);
-    padding-top: 35px; /* Ajuste le décalage pour les petits écrans */
   }
 }
 
