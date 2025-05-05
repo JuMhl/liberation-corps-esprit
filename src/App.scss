@@ -8,11 +8,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Change de center à flex-start pour aligner le contenu en haut */
   font-size: calc(10px + 2vmin);
   color: #B290B6;
   
   @media (max-width: 1025px) {
     background-image: url("./assets/background-phone.png");
   }
+}
+
+.main-content {
+  flex-grow: 1; /* Permet au contenu principal de prendre tout l'espace disponible */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* S'assure que le contenu prend toute la largeur */
+  min-height: 0; /* Empêche les conflits de hauteur avec flexbox */
 }

@@ -3,6 +3,7 @@
 .footer {
     width: 100%;
     height: 50px;
+    flex-shrink: 0; /* Empêche le footer de rétrécir */
 
     @media (max-width: 650px) {
       height: 40px;

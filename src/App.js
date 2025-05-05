@@ -15,14 +15,16 @@ function App() {
     <Router>
       <div className="app">
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/programme" element={<Programme />} />
-          {/* <Route path="/sonotherapie" element={<Sonotherapie />} />
+        <div className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/programme" element={<Programme />} />
+            {/* <Route path="/sonotherapie" element={<Sonotherapie />} />
           <Route path="/relaxation-bio-dynamique" element={<RelaxationBioDynamique />} />
           <Route path="/kateri-creations" element={<KateriCreations />} /> */}
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
         <Footer />
       </div>
     </Router>

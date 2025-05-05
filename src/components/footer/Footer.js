@@ -7,7 +7,7 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer bg-primary text-white d-flex align-items-center justify-content-center">
       <div className="info-container">
         <h1 className="title">Catherine Charleux</h1>
         <div className="logo-container">
@@ -26,7 +26,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 export default Footer;
