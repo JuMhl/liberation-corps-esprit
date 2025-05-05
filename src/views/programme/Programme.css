@@ -2,8 +2,6 @@
 .programme {
   width: 100%;
   height: calc(100vh - 110px);  
-  padding-top: 60px; /* Décale le contenu sous la navbar (hauteur de la navbar) */
-
 
   @media (max-width: 650px) {    
     height: calc(100vh - 75px);
