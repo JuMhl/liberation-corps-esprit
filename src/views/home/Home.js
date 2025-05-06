@@ -10,8 +10,8 @@ const Home = () => {
         <img src={logo} className="home-logo" alt="logo" />
         <div className="home-text">
           <p>
-            Je suis Catherine Charleux, thérapeute, spécialisée dans la gestion du stress et l'accompagnement des femmes
-            en quête d'apaisement, de reconnexion et de transformation.
+            Je suis Catherine Charleux, thérapeute, spécialisée dans la gestion du stress et l'accompagnement des
+            personnes en quête d'apaisement, de reconnexion et de transformation.
           </p>
           <p>
             J'accueille celles qui traversent une période de mal-être, de fatigue émotionnelle ou de perte de sens, et
