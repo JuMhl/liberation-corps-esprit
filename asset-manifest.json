@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.978ce6ad.css",
-    "main.js": "/static/js/main.7016664a.js",
+    "main.css": "/static/css/main.11408ae2.css",
+    "main.js": "/static/js/main.2a4f6fd7.js",
     "static/media/programme-mai-2025.png": "/static/media/programme-mai-2025.b55c90ec46b4ab3a00a9.png",
     "static/media/logo-2025.png": "/static/media/logo-2025.ab8eaa0d94bcc968701c.png",
     "static/media/background-laptop.png": "/static/media/background-laptop.3048b57ab0bd68be3ef2.png",
@@ -9,13 +9,15 @@
     "static/media/attrape-reves.png": "/static/media/attrape-reves.1f6a0195763d45f05924.png",
     "static/media/mandala-violet.png": "/static/media/mandala-violet.e2600f20ed3737ac8545.png",
     "static/media/instagram.svg": "/static/media/instagram.ed267088e9adc5b4b03c00b3f73f78e4.svg",
-    "static/media/logo-whatsapp.svg": "/static/media/logo-whatsapp.bdc22b7242978991392ba75cbc43dad6.svg",
+    "static/media/phone.svg": "/static/media/phone.e62fd96376ee2eb07e1bacb7bdd8ecac.svg",
+    "static/media/whatsapp.svg": "/static/media/whatsapp.bdc22b7242978991392ba75cbc43dad6.svg",
+    "static/media/email.svg": "/static/media/email.b9b9536c4945659500a7550fecb0098c.svg",
     "index.html": "/index.html",
-    "main.978ce6ad.css.map": "/static/css/main.978ce6ad.css.map",
-    "main.7016664a.js.map": "/static/js/main.7016664a.js.map"
+    "main.11408ae2.css.map": "/static/css/main.11408ae2.css.map",
+    "main.2a4f6fd7.js.map": "/static/js/main.2a4f6fd7.js.map"
   },
   "entrypoints": [
-    "static/css/main.978ce6ad.css",
-    "static/js/main.7016664a.js"
+    "static/css/main.11408ae2.css",
+    "static/js/main.2a4f6fd7.js"
   ]
 }
