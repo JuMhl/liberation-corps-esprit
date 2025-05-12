@@ -1,3 +1,5 @@
+@import './styles/constantes.scss';
+
 .app {
   text-align: center;
   background-color: #F3EFE9;
@@ -10,7 +12,7 @@
   align-items: center;
   justify-content: flex-start; /* Change de center à flex-start pour aligner le contenu en haut */
   font-size: calc(10px + 2vmin);
-  color: #B290B6;
+  color: $secondary-color;
   
   @media (max-width: 1025px) {
     background-image: url("./assets/background-phone.png");

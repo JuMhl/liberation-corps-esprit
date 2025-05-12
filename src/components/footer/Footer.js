@@ -1,7 +1,7 @@
 import React from 'react';
-import instaLogo from '../../assets/instagram.svg';
-import fbLogo from '../../assets/fb.png';
-import whatsappLogo from '../../assets/logo-whatsapp.svg';
+import instaLogo from '../../assets/logos/instagram.svg';
+import fbLogo from '../../assets/logos/fb.png';
+import whatsappLogo from '../../assets/logos/whatsapp.svg';
 
 import './Footer.scss';
 

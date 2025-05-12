@@ -12,6 +12,18 @@
 
 .contact-container {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .contact-link {
@@ -45,4 +57,10 @@
     font-size: 0.75rem; /* Réduit la taille du texte pour les petits écrans */
     padding: 8px 16px; /* Réduit l'espace autour du texte */
   }
+}
+
+.contact-logo {
+  height: 25px;
+  width: 25px;
+  fill: #268282;
 }
