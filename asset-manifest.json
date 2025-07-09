@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.ca0f2c01.css",
-    "main.js": "/static/js/main.11379821.js",
+    "main.css": "/static/css/main.5cbe0141.css",
+    "main.js": "/static/js/main.a3ff3377.js",
+    "static/media/portrait-zen-esterel.jpg": "/static/media/portrait-zen-esterel.cf60b402f7f781573d93.jpg",
     "static/media/programme-actuel.png": "/static/media/programme-actuel.6128daa5452bdb8cc557.png",
     "static/media/logo-2025.png": "/static/media/logo-2025.ab8eaa0d94bcc968701c.png",
     "static/media/background-laptop.png": "/static/media/background-laptop.3048b57ab0bd68be3ef2.png",
     "static/media/background-phone.png": "/static/media/background-phone.87269abe2e3da380571f.png",
-    "static/media/attrape-reves.png": "/static/media/attrape-reves.1f6a0195763d45f05924.png",
-    "static/media/mandala-violet.png": "/static/media/mandala-violet.e2600f20ed3737ac8545.png",
+    "static/media/email.png": "/static/media/email.64945d2ebbfc57a71d51.png",
     "static/media/instagram.svg": "/static/media/instagram.ed267088e9adc5b4b03c00b3f73f78e4.svg",
     "static/media/phone.svg": "/static/media/phone.e62fd96376ee2eb07e1bacb7bdd8ecac.svg",
     "static/media/whatsapp.svg": "/static/media/whatsapp.bdc22b7242978991392ba75cbc43dad6.svg",
-    "static/media/email.svg": "/static/media/email.0b3c219bce31409dece0eab4bc13aceb.svg",
     "index.html": "/index.html",
-    "main.ca0f2c01.css.map": "/static/css/main.ca0f2c01.css.map",
-    "main.11379821.js.map": "/static/js/main.11379821.js.map"
+    "main.5cbe0141.css.map": "/static/css/main.5cbe0141.css.map",
+    "main.a3ff3377.js.map": "/static/js/main.a3ff3377.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca0f2c01.css",
-    "static/js/main.11379821.js"
+    "static/css/main.5cbe0141.css",
+    "static/js/main.a3ff3377.js"
   ]
 }
