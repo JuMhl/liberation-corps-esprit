@@ -1,66 +1,149 @@
 @import '../../styles/constantes.scss';
 
 .contact {
+  min-height: calc(100vh - 110px);
+  padding: 2rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: none;
+  @media (max-width: 650px) {
+    min-height: calc(100vh - 75px);
+    padding: 1rem;
+  }
+}
+
+.contact-content {
   width: 100%;
-  flex-grow: 1;
-  min-height: 0;
-}
-
-.contact-container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  animation: fadeIn 0.5s ease-in forwards;
+  gap: 2rem;
 }
 
-.contact-text {
+.contact-title {
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.contact-intro {
+  color: $primary-color;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.contact-infos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.contact-info {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.contact-link {
-  display: inline-block;
-  text-decoration: none; /* Supprime le soulignement par défaut */
-  color: white; /* Couleur du texte */
-  background-color: $primary-color; /* Couleur de fond (vert WhatsApp) */
-  padding: 10px 20px; /* Ajoute de l'espace autour du texte */
-  border-radius: 5px; /* Arrondit les coins */
-  font-size: 1rem; /* Taille du texte */
-  font-weight: bold; /* Met le texte en gras */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Ajoute une transition pour les effets */
-}
-
-.contact-link:hover {
-  background-color: #268282; /* Change la couleur de fond au survol */
-  transform: scale(1.05); /* Agrandit légèrement le lien au survol */
-}
-
-.contact-link:active {
-  transform: scale(0.95); /* Réduit légèrement le lien lorsqu'il est cliqué */
-}
-
-@media (max-width: 650px) {
-  .contact-container {
-    font-size: 1rem; /* Réduit la taille du texte pour les petits écrans */
-    padding: 10px; /* Réduit les marges internes pour les petits écrans */
-  }
-
-  .contact-link {
-    font-size: 0.75rem; /* Réduit la taille du texte pour les petits écrans */
-    padding: 8px 16px; /* Réduit l'espace autour du texte */
-  }
+  gap: 12px;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.7rem 1.2rem;
+  border-radius: 7px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
 .contact-logo {
   height: 25px;
   width: 25px;
   fill: #268282;
+}
+
+.contact-whatsapp {
+  color: #268282;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+  &:hover {
+    color: #1b5e5e;
+    text-decoration: underline;
+  }
+}
+
+.contact-calendly-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-calendly-title {
+  font-size: 1.2rem;
+  color: $secondary-color;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.contact-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: $primary-color;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(38,130,130,0.08);
+  &:hover {
+    background-color: #268282;
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.contact-note {
+  font-style: italic;
+  color: $secondary-color;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-left: 3px solid $secondary-color;
+  background: rgba(255,255,255,0.5);
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 650px) {
+  .contact-content {
+    padding: 1.2rem 0.5rem;
+    font-size: 1rem;
+  }
+  .contact-title {
+    font-size: 1.3rem;
+  }
+  .contact-link {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
 }

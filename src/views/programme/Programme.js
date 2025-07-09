@@ -8,7 +8,7 @@ const Programme = () => {
     <div className="programme">
       <div className="programme-content">
         <div className="programme-text">
-          <h1 className="title">🌿 Programme Juin 2025</h1>
+          <h1 className="title">🌿 Programme</h1>
 
           <p className="intro">
             Laissez juin vous envelopper de douceur : balades sensorielles, sonothérapie et instants en nature. Ce
@@ -40,7 +40,7 @@ const Programme = () => {
         </div>
 
         <div className="programme-container">
-          <img src={programmeActuel} className="programme-sizing" alt="programme" />
+          {/* <img src={programmeActuel} className="programme-sizing" alt="programme" /> */}
         </div>
       </div>
     </div>

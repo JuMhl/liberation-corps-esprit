@@ -1,13 +1,19 @@
 import React from 'react';
+import StageBanner from '../../components/stage-banner/StageBanner';
 import logo from '../../assets/logos/logo-2025.png';
-
+import portraitAcceuil from '../../assets/photos/portrait-zen-esterel.jpg';
 import './Home.scss';
 
 const Home = () => {
   return (
     <div className="home">
-      <div className="home-container">
+      <div className="home-header">
         <img src={logo} className="home-logo" alt="logo" />
+        <div className="home-photo-wrapper">
+          <img src={portraitAcceuil} className="home-photo" alt="Catherine Charleux au bord de la mer" />
+        </div>
+      </div>
+      <div className="home-container">
         <div className="home-text">
           <p>
             Je suis Catherine Charleux, spécialisée dans la gestion du stress et l'accompagnement des personnes en quête
@@ -23,6 +29,7 @@ const Home = () => {
           </p>
         </div>
       </div>
+      <StageBanner />
     </div>
   );
 };

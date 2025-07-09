@@ -1,0 +1,37 @@
+@import '../../styles/constantes.scss';
+
+.stage-banner {
+  background: linear-gradient(90deg, #977ea981 0%, $secondary-color 100%);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  margin: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  color: white;
+  font-size: 1.2rem;
+}
+
+.stage-banner h2 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stage-banner a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 650px) {
+  .stage-banner h2 {
+    font-size: 1.2rem;
+  }
+  .stage-banner {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 1rem 0.5rem;
+    margin: 1rem 0.5rem;
+  }
+}

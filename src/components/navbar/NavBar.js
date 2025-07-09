@@ -1,7 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import mandala from '../../assets/mandala-violet.png';
-import dreamcatcher from '../../assets/attrape-reves.png';
 
 import './NavBar.scss';
 
@@ -18,7 +16,6 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <div className="nav-container">
-        <img src={mandala} className="nav-logo" alt="logo" />
         <div className="container-links">
           {links.map((link, index) => {
             return (
@@ -28,7 +25,6 @@ const NavBar = () => {
             );
           })}
         </div>
-        <img src={dreamcatcher} className="nav-logo-dreamcatcher" alt="logo" />
       </div>
     </div>
   );

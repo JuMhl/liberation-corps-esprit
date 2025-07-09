@@ -17,12 +17,44 @@
   text-align: left; /* Aligne le texte à gauche */
 }
 
+.home-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem 0 0 0;
+}
+
+.home-photo-wrapper {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-photo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;  
+  object-position: center 80%;
+  border-radius: 50%;
+  transform: scale(2.2); // Ajuste le zoom ici
+}
+
 .home-logo {
   height: 10rem; /* Taille du logo */
   padding: 1rem;
 }
 
 .home-container p {  
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
   padding: 0 12em; /* Ajoute un peu d'espace autour du contenu */
   font-size: 1.2rem; /* Texte plus grand */
   line-height: 1.8; /* Espacement entre les lignes pour une meilleure lisibilité */
@@ -36,7 +68,13 @@
 
   .home-logo {
     height: 7rem; /* Taille du logo */
-    padding: 0.5rem;  }
+    padding: 0.5rem;  
+  }
+
+  .home-photo-wrapper {
+    height: 7rem;
+    width: 7rem;
+  }
 
   .home-container p {  
     padding: 0 1em; /* Ajoute un peu d'espace autour du contenu */
