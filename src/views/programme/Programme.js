@@ -1,5 +1,4 @@
 import React from 'react';
-import programmeActuel from '../../assets/programme-actuel.png';
 
 import './Programme.scss';
 

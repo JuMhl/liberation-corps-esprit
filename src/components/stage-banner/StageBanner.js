@@ -1,5 +1,4 @@
 import React from 'react';
-import instaLogo from '../../assets/logos/instagram.svg';
 
 import './StageBanner.scss';
 
