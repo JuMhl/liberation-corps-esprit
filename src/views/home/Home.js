@@ -2,6 +2,7 @@ import React from 'react';
 import StageBanner from '../../components/stage-banner/StageBanner';
 import logo from '../../assets/logos/logo-2025.png';
 import portraitAcceuil from '../../assets/photos/portrait-zen-esterel.jpg';
+import aquarelle from '../../assets/photos/aquarelle.jpg';
 import './Home.scss';
 
 const Home = () => {
@@ -30,6 +31,39 @@ const Home = () => {
         </div>
       </div>
       <StageBanner />
+      <div
+        className="home-aquarelle-bg-section"
+        style={{
+          backgroundImage: `url(${aquarelle})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className="home-aquarelle-bg-text">
+          <p>
+            Il arrive un moment où l'on ne sait plus très bien où l'on va.
+            <br />
+            Où l'on porte trop, où l'on respire à moitié.
+            <br />
+            Dans ces instants-là, je tends la main.
+          </p>
+          <p>
+            <strong>Mon rôle :</strong> ouvrir un passage doux entre le tumulte et la paix.
+            <br />
+            Un espace où l'on peut, enfin, se retrouver.
+          </p>
+          <p>Je guide les femmes en période de fatigue, de transition ou de trop-plein, vers un mieux-être global.</p>
+          <p>
+            Mon accompagnement les aide à relâcher les tensions du corps, à apaiser le mental, et à se reconnecter à qui
+            elles sont profondément.
+          </p>
+          <p>
+            Parce que j'ai moi-même traversé l'épuisement et le désalignement, j'ai à cœur de créer un espace doux, où
+            l'on peut enfin respirer, déposer, et revenir à soi.
+          </p>
+          <p className="signature">Catherine Charleux</p>
+        </div>
+      </div>
     </div>
   );
 };

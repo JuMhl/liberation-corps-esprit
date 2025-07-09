@@ -1,4 +1,5 @@
 @import '../../styles/constantes.scss';
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Great+Vibes&display=swap');
 
 .home {
   display: flex;
@@ -63,6 +64,42 @@
   word-wrap: break-word; /* Permet de couper les mots longs si nécessaire */
 }
 
+.home-aquarelle-bg-section {
+  margin: 3rem auto 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  min-height: 350px;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1.5rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.home-aquarelle-bg-text {
+  background: rgba(255, 255, 255, 0.9); // Fond blanc translucide pour la lisibilité
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: $primary-color;
+  line-height: 1.2;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.signature {
+  font-family: "Great Vibes", cursive;
+  font-size: 2rem;
+  text-align: right;
+  margin: 2rem 0 0 0;
+}
+
 /* Media query pour les petits écrans */
 @media (max-width: 650px) {
 
@@ -79,7 +116,24 @@
   .home-container p {  
     padding: 0 1em; /* Ajoute un peu d'espace autour du contenu */
     font-size: 1rem; /* Réduit la taille du texte pour les petits écrans */
-    line-height: 1.5; /* Ajuste l'espacement entre les lignes */
     margin-bottom: 10px; /* Réduit l'espacement entre les paragraphes */
+  }
+
+  .home-aquarelle-bg-section {
+    padding: 1rem 0.2rem;
+    min-height: unset;
+    border-radius: 0.8rem;
+  }
+
+  .home-aquarelle-bg-text {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    max-width: 98vw;
+    border-radius: 0.7rem;
+  }
+
+  .signature {
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
   }
 }
