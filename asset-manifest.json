@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.5cbe0141.css",
-    "main.js": "/static/js/main.a3ff3377.js",
+    "main.css": "/static/css/main.8d294ccc.css",
+    "main.js": "/static/js/main.4ba27df2.js",
     "static/media/portrait-zen-esterel.jpg": "/static/media/portrait-zen-esterel.cf60b402f7f781573d93.jpg",
     "static/media/programme-actuel.png": "/static/media/programme-actuel.6128daa5452bdb8cc557.png",
     "static/media/logo-2025.png": "/static/media/logo-2025.ab8eaa0d94bcc968701c.png",
+    "static/media/aquarelle.jpg": "/static/media/aquarelle.dda8cfa357b7c52dbde8.jpg",
     "static/media/background-laptop.png": "/static/media/background-laptop.3048b57ab0bd68be3ef2.png",
     "static/media/background-phone.png": "/static/media/background-phone.87269abe2e3da380571f.png",
     "static/media/email.png": "/static/media/email.64945d2ebbfc57a71d51.png",
@@ -12,11 +13,11 @@
     "static/media/phone.svg": "/static/media/phone.e62fd96376ee2eb07e1bacb7bdd8ecac.svg",
     "static/media/whatsapp.svg": "/static/media/whatsapp.bdc22b7242978991392ba75cbc43dad6.svg",
     "index.html": "/index.html",
-    "main.5cbe0141.css.map": "/static/css/main.5cbe0141.css.map",
-    "main.a3ff3377.js.map": "/static/js/main.a3ff3377.js.map"
+    "main.8d294ccc.css.map": "/static/css/main.8d294ccc.css.map",
+    "main.4ba27df2.js.map": "/static/js/main.4ba27df2.js.map"
   },
   "entrypoints": [
-    "static/css/main.5cbe0141.css",
-    "static/js/main.a3ff3377.js"
+    "static/css/main.8d294ccc.css",
+    "static/js/main.4ba27df2.js"
   ]
 }
