@@ -1,0 +1,109 @@
+@import '../../styles/constantes.scss';
+
+.cards-accompaniement {
+  margin-top: 5rem;
+}
+
+.cards-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.accompaniement-main-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.accompaniement-card {
+  background-size: cover;
+  background-position: center;
+  width: 320px;
+  height: 340px;
+  border-radius: 5px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.10);
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.accompaniement-card-content {
+  background: rgba(44,62,80,0.60);
+  color: #fff;
+  width: 100%;
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  text-align: center;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.accompaniement-card-content h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.accompaniement-btn {
+  display: inline-block;
+  background: $primary-color;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.2s;
+  &:hover {
+    background: $secondary-color;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 1050px) {
+  .cards-accompaniement {
+    gap: 1rem;
+  }
+  .accompaniement-card {
+    width: 90vw;
+    max-width: 350px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 700px) {  
+  .accompaniement-main-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  .cards-accompaniement {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .accompaniement-card {
+    width: 95vw;
+    max-width: 400px;
+    height: 200px;
+  }
+  .accompaniement-card-content {
+    padding: 1rem 0.7rem 1rem 0.7rem;
+  }
+  .accompaniement-card-content h3 {
+    font-size: 1rem;
+  }
+  .accompaniement-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

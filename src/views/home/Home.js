@@ -1,5 +1,7 @@
 import React from 'react';
 import StageBanner from '../../components/stage-banner/StageBanner';
+import CardsAccompaniement from '../../components/cards-accompaniement/CardsAccompaniement';
+import NatureSession from '../../components/nature-session/NatureSession';
 import logo from '../../assets/logos/logo-2025.png';
 import portraitAcceuil from '../../assets/photos/portrait-zen-esterel.jpg';
 import aquarelle from '../../assets/photos/aquarelle.jpg';
@@ -64,6 +66,8 @@ const Home = () => {
           <p className="signature">Catherine Charleux</p>
         </div>
       </div>
+      <CardsAccompaniement />
+      <NatureSession />
     </div>
   );
 };

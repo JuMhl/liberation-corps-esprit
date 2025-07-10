@@ -1,0 +1,74 @@
+@import '../../styles/constantes.scss';
+
+.nature-session {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 2.5rem 3rem;
+  flex-wrap: wrap;
+}
+
+.nature-session__content {
+  flex: 1 1 320px;
+  max-width: none;
+  text-align: left;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.nature-session__title {
+  font-size: 1.6rem;
+  color: #267c6e;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.nature-session__text {
+  font-size: 1.13rem;
+  color: #2c3e50;
+  line-height: 1.7;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.nature-session__image-block {
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 220px;
+}
+
+.nature-session__image {
+  width: 550px;
+  max-width: 90vw;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.13);
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .nature-session {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+  .nature-session__image {
+    width: 100%;
+    max-width: 550px;
+  }
+  .nature-session__content {
+    flex: none;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .nature-session__image {
+    max-width: 400px;
+  }
+  .nature-session {
+    gap: 0;
+  }
+}
