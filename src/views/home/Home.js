@@ -19,20 +19,18 @@ const Home = () => {
       <div className="home-container">
         <div className="home-text">
           <p>
-            Je suis Catherine Charleux, spécialisée dans la gestion du stress et l'accompagnement des personnes en quête
-            d'apaisement, de reconnexion et de transformation.
+            Spécialisée dans la gestion du <strong>stress</strong> et l'accompagnement des personnes en quête
+            d'apaisement, j'accueille celles qui traversent une période de <strong>mal-être</strong>, de{' '}
+            <strong>fatigue émotionnelle</strong> ou de <strong>perte de sens</strong>, et je les guide avec douceur{' '}
+            <strong>vers un mieux-être global</strong>.
           </p>
           <p>
-            J'accueille celles qui traversent une période de mal-être, de fatigue émotionnelle ou de perte de sens, et
-            je les guide avec douceur vers un mieux-être global.
-          </p>
-          <p>
-            Chaque rendez-vous est une bulle de présence, une pause bienveillante pour revenir à soi, relâcher les
-            tensions et laisser émerger ce qui a besoin d'être entendu, accueilli et transformé.
+            Chaque rendez-vous est une bulle de présence,{' '}
+            <strong>une pause bienveillante pour revenir à soi, relâcher les tensions</strong> et laisser émerger ce qui
+            a besoin d'être entendu, accueilli et transformé.
           </p>
         </div>
       </div>
-      <StageBanner />
       <div
         className="home-aquarelle-bg-section"
         style={{
@@ -68,6 +66,7 @@ const Home = () => {
       </div>
       <CardsAccompaniement />
       <NatureSession />
+      <StageBanner />
     </div>
   );
 };

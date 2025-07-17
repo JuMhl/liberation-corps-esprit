@@ -17,7 +17,7 @@ const cards = [
     link: '#voyages'
   },
   {
-    title: 'Accompagnement Personalisé',
+    title: 'Accompagnement holistique',
     image: premium,
     link: '#premium'
   }
