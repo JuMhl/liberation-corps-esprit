@@ -1,0 +1,98 @@
+@import '../../styles/constantes.scss';
+
+.witness-custom-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 220px;
+}
+
+.witness-caroussel-container {
+  margin-bottom: 1rem;
+}
+
+.witness-title {
+  color: $primary-color;
+}
+
+.witness-img {
+  border-radius: 12px;
+  max-height: 400px;
+  max-width: 100%;
+  object-fit: contain;
+  background: #f8f8f8;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+  display: block;
+  margin: 0 auto;
+}
+
+.witness-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255,255,255,0.95);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  user-select: none;
+  outline: none;
+}
+.witness-arrow.left {
+  left: 10px;
+}
+.witness-arrow.right {
+  right: 10px;
+}
+.witness-arrow:hover, .witness-arrow:focus {
+  background: $primary-color;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(44,62,80,0.18);
+}
+
+.witness-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+  gap: 8px;
+}
+
+.witness-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #c2e3db;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+  border: none;
+  outline: none;
+}
+
+.witness-dot.active {
+  background: $primary-color;
+}
+
+@media (max-width: 600px) {
+  .witness-img {
+    max-height: 220px;
+  }
+  .witness-title {
+    font-size: 1.3rem;
+  }
+  .witness-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+}
