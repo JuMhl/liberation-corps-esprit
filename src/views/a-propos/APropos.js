@@ -1,6 +1,7 @@
 import React from 'react';
 import portraitAPropos from '../../assets/photos/portrait_mer_tambour.jpg';
 import natureAPropos from '../../assets/photos/foret.jpg';
+import FormationsAndValues from '../../components/formations-and-values/FormationsAndValues';
 
 import './APropos.scss';
 
@@ -99,6 +100,7 @@ const APropos = () => {
             </div>
           </div>
         </div>
+        <FormationsAndValues />
       </div>
     </div>
   );
