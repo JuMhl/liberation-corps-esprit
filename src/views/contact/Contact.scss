@@ -1,4 +1,4 @@
-@import '../../styles/constantes.scss';
+@use '../../styles/constantes' as *;
 
 .contact {
   min-height: calc(100vh - 110px);

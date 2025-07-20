@@ -4,10 +4,10 @@ import logo from '../../assets/logos/logo-2025.png';
 import portraitAcceuil from '../../assets/photos/portrait-zen-esterel.jpg';
 import aquarelle from '../../assets/photos/aquarelle.jpg';
 
-import StageBanner from '../../components/stage-banner/StageBanner';
-import CardsAccompaniement from '../../components/cards-accompaniement/CardsAccompaniement';
-import NatureSession from '../../components/nature-session/NatureSession';
-import WitnessCaroussel from '../../components/witnesses-caroussel/WitnessesCaroussel';
+import StageBanner from '../../components/home/stage-banner/StageBanner';
+import CardsAccompaniement from '../../components/home/cards-accompaniement/CardsAccompaniement';
+import NatureSession from '../../components/home/nature-session/NatureSession';
+import WitnessCaroussel from '../../components/home/witnesses-caroussel/WitnessesCaroussel';
 
 import './Home.scss';
 

@@ -1,4 +1,4 @@
-@import '../../styles/constantes.scss';
+@use '../../styles/constantes' as *;
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Great+Vibes&display=swap');
 
 .home {
@@ -57,7 +57,7 @@
   opacity: 0;
   animation: fadeIn 0.5s ease-in forwards;
   padding: 0 12em; /* Ajoute un peu d'espace autour du contenu */
-  font-size: 1.2rem; /* Texte plus grand */
+  font-size: $text-font-size;
   line-height: 1.8; /* Espacement entre les lignes pour une meilleure lisibilité */
   color: $primary-color; /* Couleur du texte */
   margin-bottom: 1.25rem; /* Espacement entre les paragraphes */
@@ -82,12 +82,12 @@
 }
 
 .home-aquarelle-bg-text {
-  background: rgba(255, 255, 255, 0.9); // Fond blanc translucide pour la lisibilité
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 1rem;
   padding: 2rem 2.5rem;
   max-width: 700px;
   margin: 0 auto;
-  font-size: 1.15rem;
+  font-size: $text-font-size;
   color: $primary-color;
   line-height: 1.2;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);

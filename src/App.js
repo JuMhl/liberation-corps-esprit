@@ -4,7 +4,7 @@ import NavBar from './components/navbar/NavBar';
 import Home from './views/home/Home';
 // import RelaxationBioDynamique from './views/rbd/RelaxationBioDynamique';
 // import KateriCreations from './views/katericreations/KateriCreations';
-// import Sonotherapie from './views/sonotherapie/Sonotherapie';
+import APropos from './views/a-propos/APropos';
 import Contact from './views/contact/Contact';
 import Programme from './views/programme/Programme';
 
@@ -19,9 +19,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/programme" element={<Programme />} />
-            {/* <Route path="/sonotherapie" element={<Sonotherapie />} />
-          <Route path="/relaxation-bio-dynamique" element={<RelaxationBioDynamique />} />
-          <Route path="/kateri-creations" element={<KateriCreations />} /> */}
+            <Route path="/a-propos" element={<APropos />} />
+            {/* <Route path="/relaxation-bio-dynamique" element={<RelaxationBioDynamique />} /> */}
+            {/* <Route path="/kateri-creations" element={<KateriCreations />} /> */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>

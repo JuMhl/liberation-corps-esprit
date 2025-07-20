@@ -1,4 +1,4 @@
-@import '../../styles/constantes.scss';
+@use '../../../styles/constantes' as *;
 
 .nature-session {
   display: flex;
@@ -18,14 +18,14 @@
 }
 
 .nature-session__title {
-  font-size: 1.6rem;
+  font-size: $title-font-size;
   color: $primary-color;
   font-weight: 600;
   margin-bottom: 1.2rem;
 }
 
 .nature-session__text {
-  font-size: 1.13rem;
+  font-size: $text-font-size;
   color: #2c3e50;
   line-height: 1.7;
   margin-bottom: 0;

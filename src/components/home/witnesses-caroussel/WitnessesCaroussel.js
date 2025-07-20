@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './WitnessCaroussel.scss';
 
-import img1 from '../../assets/temoignages/20250619_093341.jpg';
-import img2 from '../../assets/temoignages/20250619_093446.jpg';
-import img3 from '../../assets/temoignages/20250619_093511.jpg';
-import img4 from '../../assets/temoignages/Screenshot_20240625-113754_Facebook.jpg';
-import img5 from '../../assets/temoignages/Screenshot_20240716-202143_WhatsApp.jpg';
-import img6 from '../../assets/temoignages/Screenshot_20250619-093218_Google.jpg';
+import img1 from '../../../assets/temoignages/20250619_093341.jpg';
+import img2 from '../../../assets/temoignages/20250619_093446.jpg';
+import img3 from '../../../assets/temoignages/20250619_093511.jpg';
+import img4 from '../../../assets/temoignages/Screenshot_20240625-113754_Facebook.jpg';
+import img5 from '../../../assets/temoignages/Screenshot_20240716-202143_WhatsApp.jpg';
+import img6 from '../../../assets/temoignages/Screenshot_20250619-093218_Google.jpg';
 
 const images = [img1, img2, img3, img4, img5, img6];
 

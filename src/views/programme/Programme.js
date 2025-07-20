@@ -7,15 +7,6 @@ const Programme = () => {
     <div className="programme">
       <div className="programme-content">
         <div className="programme-text">
-          <h1 className="title">🌿 Programme</h1>
-
-          <p className="intro">
-            Laissez juin vous envelopper de douceur : balades sensorielles, sonothérapie et instants en nature. Ce
-            mois-ci, je vous invite à vivre des expériences profondes de reconnexion à vous-même, au travers du
-            mouvement, des sons et de la nature. Que vous cherchiez à vous détendre, à vous ressourcer ou simplement à
-            respirer un peu plus librement, ce programme a été conçu comme une bulle de bien-être.
-          </p>
-
           <div className="activities">
             <h2>🌸 Au programme :</h2>
             <ul>

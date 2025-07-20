@@ -1,9 +1,9 @@
 import React from 'react';
 import './CardsAccompaniement.scss';
 
-import harmonisation from '../../assets/photos/harmonisation.png';
-import voyage from '../../assets/photos/voyage.png';
-import premium from '../../assets/photos/premium.png';
+import harmonisation from '../../../assets/photos/harmonisation.png';
+import voyage from '../../../assets/photos/voyage.png';
+import premium from '../../../assets/photos/premium.png';
 
 const cards = [
   {

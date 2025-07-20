@@ -7,7 +7,7 @@ const NavBar = () => {
   const links = [
     { title: 'Accueil', path: '/' },
     { title: 'Programme', path: '/programme' },
-    // { title: 'Sonothérapie', path: '/sonotherapie' },
+    { title: 'À Propos', path: '/a-propos' },
     // { title: 'Relaxation Bio-Dynamique', path: '/relaxation-bio-dynamique' },
     // { title: 'Kateri Créations', path: '/kateri-creations' },
     { title: 'Contact', path: '/contact' }
