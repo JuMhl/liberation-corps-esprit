@@ -17,6 +17,10 @@
   @media (max-width: 1025px) {
     background-image: url("./assets/background-phone.png");
   }
+  
+  @media (max-width: 650px) {
+    font-size: $mobile-text-font-size;
+  }
 }
 
 .main-content {
