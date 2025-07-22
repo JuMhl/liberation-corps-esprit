@@ -18,8 +18,12 @@ const accompagnements = [
         <strong>Un voyage intérieur pour libérer le corps et apaiser le mental</strong>
         <p>
           Lorsque le mental est saturé, le corps finit souvent par parler à sa place : tensions, fatigue chronique,
-          respiration courte, boule au ventre, maux inexpliqués... La relaxation bio-dynamique est une invitation à
-          revenir dans le corps, en douceur, pour libérer ce qui a besoin de l’être.
+          respiration courte, boule au ventre, maux inexpliqués...
+        </p>
+        <p>
+          La relaxation bio-dynamique est une invitation à revenir dans le corps, en douceur, pour libérer ce qui a
+          besoin de l’être. Elle agit en profondeur, sur les tensions musculaires, mais aussi émotionnelles et
+          énergétiques.
         </p>
         <strong>Déroulement d’une séance</strong>
         <ul>
@@ -41,7 +45,7 @@ const accompagnements = [
         </ul>
         <div className="chips">
           <span className="chip">1h à 1h30</span>
-          <span className="chip">16€ / pers (groupe)</span>
+          <span className="chip">A partir de 16€ / pers (groupe)</span>
           <span className="chip">Saint-Raphaël & environs</span>
         </div>
       </>
@@ -77,7 +81,7 @@ const accompagnements = [
         </ul>
         <div className="chips">
           <span className="chip">1h15 à 1h30</span>
-          <span className="chip">70€</span>
+          <span className="chip">A partir de 70€</span>
           <span className="chip">Cabinet ou domicile</span>
         </div>
       </>
@@ -105,7 +109,7 @@ const accompagnements = [
         </ul>
         <div className="chips">
           <span className="chip">1h à 1h30</span>
-          <span className="chip">20€ / pers</span>
+          <span className="chip">A partir de 20€ / pers</span>
           <span className="chip">Individuel ou collectif</span>
         </div>
       </>
