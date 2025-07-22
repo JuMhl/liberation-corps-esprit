@@ -8,9 +8,9 @@
   padding: 40px 0;
 
   &__container {
-    // max-width: 650px;
     width: 100%;
     padding: 36px 32px 28px 32px;
+    animation: fadeIn 0.5s ease-in forwards;
   }
 
   &__intro, &__transition, &__nature {

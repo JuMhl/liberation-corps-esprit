@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './CardsAccompaniement.scss';
 
 import harmonisation from '../../../assets/photos/harmonisation.png';
@@ -9,17 +11,17 @@ const cards = [
   {
     title: 'Harmonisation du corps et de l’esprit',
     image: harmonisation,
-    link: '#harmonisation'
+    link: '/accompagnements#harmonisation'
   },
   {
     title: 'Voyages sonores & massages aux bols',
     image: voyage,
-    link: '#voyages'
+    link: '/accompagnements#voyages'
   },
   {
     title: 'Accompagnement holistique',
     image: premium,
-    link: '#premium'
+    link: '/accompagnements#accompagnement'
   }
 ];
 
@@ -31,9 +33,9 @@ const CardsAccompaniement = () => (
         <div className="accompaniement-card" key={idx} style={{ backgroundImage: `url(${card.image})` }}>
           <div className="accompaniement-card-content">
             <h3>{card.title}</h3>
-            <a href={card.link} className="accompaniement-btn">
+            <Link to={card.link} className="accompaniement-btn">
               En savoir plus
-            </a>
+            </Link>
           </div>
         </div>
       ))}
