@@ -3,7 +3,7 @@ import Footer from './components/footer/Footer';
 import NavBar from './components/navbar/NavBar';
 import Home from './views/home/Home';
 import Accompagnements from './views/accompagnements/Accompagnements';
-// import KateriCreations from './views/katericreations/KateriCreations';
+import KateriCreations from './views/katericreations/KateriCreations';
 import APropos from './views/a-propos/APropos';
 import Contact from './views/contact/Contact';
 import Programme from './views/programme/Programme';
@@ -21,7 +21,7 @@ function App() {
             <Route path="/programme" element={<Programme />} />
             <Route path="/a-propos" element={<APropos />} />
             <Route path="/accompagnements" element={<Accompagnements />} />
-            {/* <Route path="/kateri-creations" element={<KateriCreations />} /> */}
+            <Route path="/kateri-creations" element={<KateriCreations />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>

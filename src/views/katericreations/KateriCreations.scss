@@ -1,10 +1,8 @@
-.kateri-creations {
-  width: 100%;
-  height: calc(100vh - 110px);
+@use '../../styles/constantes' as *;
 
-  @media (max-width: 650px) {
-    height: calc(100vh - 75px);
-  }
+.kateri-creations {
+  min-height: 80vh;
+  padding: 20px 20px;
 }
 
 .kateri-creations-container {
@@ -13,4 +11,83 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+
+  h3 {
+    color: $secondary-color;
+  }
+  p, li {
+    color: $basic-text-color;
+  }
+}
+
+.kateri-creations-content {
+  padding: 0 20px;
+}
+
+.kateri-creations-products-mobile {
+  display: none;
+}
+
+.kateri-creations-products-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .kateri-creations-products-mobile {
+    display: block;
+  height: 100%;
+  width: 100%;
+    margin-bottom: 2rem;
+  }
+  .kateri-creations-products-desktop {
+    display: none;
+  }
+}
+
+.kateri-img {
+  display: block;
+  margin: 2rem auto;
+  max-width: 220px;
+  border-radius: 12px;
+}
+
+.creations-list-styled {
+  list-style: none;
+  padding: 0;
+}
+
+.creations-list-styled li {
+  font-size: 1.08rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  background: #ffffff7a;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+}
+
+.creation-bullet {
+  color: #7a5c3a;
+  font-size: 1.5rem;
+  margin-right: 0.7rem;
+}
+
+.creation-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.signature {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f6f6f6;
+  border-radius: 8px;
+  text-align: center;
 }

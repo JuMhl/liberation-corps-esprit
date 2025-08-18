@@ -7,9 +7,18 @@ import aquarelle from '../../assets/photos/aquarelle.jpg';
 import StageBanner from '../../components/home/stage-banner/StageBanner';
 import CardsAccompaniement from '../../components/home/cards-accompaniement/CardsAccompaniement';
 import NatureSession from '../../components/home/nature-session/NatureSession';
-import WitnessCaroussel from '../../components/home/witnesses-caroussel/WitnessesCaroussel';
+import Caroussel from '../../components/caroussel/Caroussel';
 
 import './Home.scss';
+
+import img1 from '../../assets/temoignages/witness1.jpg';
+import img2 from '../../assets/temoignages/witness2.jpg';
+import img3 from '../../assets/temoignages/witness3.jpg';
+import img4 from '../../assets/temoignages/witness4.jpg';
+import img5 from '../../assets/temoignages/witness5.jpg';
+import img6 from '../../assets/temoignages/witness6.jpg';
+
+const imagesCarousel = [img1, img2, img3, img4, img5, img6];
 
 const Home = () => {
   return (
@@ -71,7 +80,7 @@ const Home = () => {
       <CardsAccompaniement />
       <NatureSession />
       <StageBanner />
-      <WitnessCaroussel />
+      <Caroussel images={imagesCarousel} title="Témoignages" />{' '}
     </div>
   );
 };

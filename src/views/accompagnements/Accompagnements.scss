@@ -20,7 +20,7 @@
   border-radius: 8px;
   margin-bottom: 18px;
   border: 1px solid #e0e0e097;
-  background: #ffffff8f;
+  background: #ffffff4a;
   overflow: hidden;
   box-shadow: 0 2px 8px #0001;
   transition: box-shadow 0.2s;
@@ -44,11 +44,11 @@
   padding: 18px 24px;
   cursor: pointer;
   transition: background 0.2s;
-  color: #2d2d2d;
+  color: $primary-color;
 }
 
 .accordion-title:hover {
-  background: #f5f5f5;
+  background: #F3EFE9;
 }
 
 .accordion-title .icon {
