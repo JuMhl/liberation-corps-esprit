@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../../assets/logos/logo-2025.png';
+import logo from '../../assets/logos/logo_nu_fond_transparent.png';
 import portraitAcceuil from '../../assets/photos/portrait-zen-esterel.jpg';
 import aquarelle from '../../assets/photos/aquarelle.jpg';
 
@@ -24,24 +24,27 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home-header">
-        <img src={logo} className="home-logo" alt="logo" />
-        <div className="home-photo-wrapper">
-          <img src={portraitAcceuil} className="home-photo" alt="Catherine Charleux au bord de la mer" />
+        <div className="home-header-logo-title-text">
+          <div className="home-header-logo-title">
+            <img src={logo} className="home-logo" alt="logo" />
+            <span className="home-title">Libération du corps et de l'esprit</span>
+          </div>
+          <div className="home-header-text">
+            <p>
+              Spécialisée dans la gestion du <strong>stress</strong> et l'accompagnement des personnes en quête
+              d'apaisement, j'accueille celles qui traversent une période de <strong>mal-être</strong>, de{' '}
+              <strong>fatigue émotionnelle</strong> ou de <strong>perte de sens</strong>, et je les guide avec douceur{' '}
+              <strong>vers un mieux-être global</strong>.
+            </p>
+            <p>
+              Chaque rendez-vous est une bulle de présence,{' '}
+              <strong>une pause bienveillante pour revenir à soi, relâcher les tensions</strong> et laisser émerger ce
+              qui a besoin d'être entendu, accueilli et transformé.
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="home-container">
-        <div className="home-text">
-          <p>
-            Spécialisée dans la gestion du <strong>stress</strong> et l'accompagnement des personnes en quête
-            d'apaisement, j'accueille celles qui traversent une période de <strong>mal-être</strong>, de{' '}
-            <strong>fatigue émotionnelle</strong> ou de <strong>perte de sens</strong>, et je les guide avec douceur{' '}
-            <strong>vers un mieux-être global</strong>.
-          </p>
-          <p>
-            Chaque rendez-vous est une bulle de présence,{' '}
-            <strong>une pause bienveillante pour revenir à soi, relâcher les tensions</strong> et laisser émerger ce qui
-            a besoin d'être entendu, accueilli et transformé.
-          </p>
+        <div className="home-header-photo-wrapper">
+          <img src={portraitAcceuil} className="home-photo" alt="Catherine Charleux au bord de la mer" />
         </div>
       </div>
       <div

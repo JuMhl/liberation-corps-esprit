@@ -8,9 +8,9 @@ const NavBar = () => {
     { title: 'Accueil', path: '/' },
     { title: 'Programme', path: '/programme' },
     { title: 'Accompagnements', path: '/accompagnements' },
-    { title: 'Kateri Créations', path: '/kateri-creations' },
     { title: 'À Propos', path: '/a-propos' },
-    { title: 'Contact', path: '/contact' }
+    { title: 'Contact', path: '/contact' },
+    { title: 'Kateri Créations', path: '/kateri-creations' }
   ];
 
   return (
