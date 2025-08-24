@@ -59,11 +59,13 @@ const Contact = () => {
             name="newsletter"
             method="POST"
             data-netlify="true"
+            netlify-honeypot="bot-field"
             className="contact-newsletter-form"
             action="/"
             // onSubmit={() => setSubmitted(true)}
           >
             <input type="hidden" name="form-name" value="newsletter" />
+            <input type="hidden" name="bot-field" />
             <div className="contact-form-row">
               <div className="contact-form-group">
                 <label htmlFor="firstname">Prénom *</label>
