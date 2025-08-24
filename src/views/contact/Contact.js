@@ -56,13 +56,12 @@ const Contact = () => {
             <div className="contact-note">✨ Merci pour votre inscription ! Vous recevrez bientôt nos actualités.</div>
           ) : (
             <form
+              netlify
               name="newsletter"
               method="POST"
-              data-netlify="true"
               className="contact-newsletter-form"
               onSubmit={() => setSubmitted(true)}
             >
-              <input type="hidden" name="form-name" value="newsletter" />
               <div className="contact-form-row">
                 <div className="contact-form-group">
                   <label htmlFor="firstname">Prénom *</label>
