@@ -80,12 +80,12 @@
 }
 
 .home-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: $primary-color;
   font-family: "Merienda", cursive;
   
   @media (max-width: 1012px) {
-    font-size: 4rem;
+    font-size: 2rem;
   }
 }
 
@@ -192,7 +192,7 @@
   }
 
   .home-title {
-    font-size: 2.8rem;
+    font-size: 1.5rem;
   }
 
   .home-header-photo-wrapper {

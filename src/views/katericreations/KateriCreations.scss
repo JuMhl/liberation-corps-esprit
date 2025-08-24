@@ -2,7 +2,7 @@
 
 .kateri-creations {
   min-height: 80vh;
-  padding: 20px 20px;
+  padding: 20px 40px;
   opacity: 0;
   animation: fadeIn 0.5s ease-in forwards;
 }
@@ -20,10 +20,9 @@
   p, li {
     color: $basic-text-color;
   }
-}
-
-.kateri-creations-content {
-  padding: 0 20px;
+  p {
+    text-align: justify;
+  }
 }
 
 .kateri-creations-products-mobile {
@@ -41,8 +40,8 @@
 @media (max-width: 768px) {
   .kateri-creations-products-mobile {
     display: block;
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
     margin-bottom: 2rem;
   }
   .kateri-creations-products-desktop {
@@ -87,9 +86,13 @@
 }
 
 .signature {
+  font-size: 1.2rem;
   margin-top: 2rem;
   padding: 1rem;
   background: #f6f6f6;
   border-radius: 8px;
   text-align: center;
+  p {
+    text-align: center;
+  }
 }

@@ -5,7 +5,7 @@ import email from '../../assets/logos/email.png';
 import './Contact.scss';
 
 const Contact = () => {
-  const [submitted, setSubmitted] = useState(false);
+  // const [submitted, setSubmitted] = useState(false);
 
   return (
     <div className="contact">
@@ -52,56 +52,60 @@ const Contact = () => {
 
         <div className="contact-newsletter-block">
           <h2 className="contact-calendly-title">📰 Inscrivez-vous à la Newsletter</h2>
-          {submitted ? (
+          {/* {submitted ? (
             <div className="contact-note">✨ Merci pour votre inscription ! Vous recevrez bientôt nos actualités.</div>
-          ) : (
-            <form
-              netlify
-              name="newsletter"
-              method="POST"
-              className="contact-newsletter-form"
-              onSubmit={() => setSubmitted(true)}
-            >
-              <div className="contact-form-row">
-                <div className="contact-form-group">
-                  <label htmlFor="firstname">Prénom *</label>
-                  <input
-                    type="text"
-                    name="firstname"
-                    id="firstname"
-                    placeholder="Votre prénom"
-                    required
-                    autoComplete="given-name"
-                  />
-                </div>
-                <div className="contact-form-group">
-                  <label htmlFor="lastname">Nom</label>
-                  <input type="text" name="lastname" id="lastname" placeholder="Votre nom" autoComplete="family-name" />
-                </div>
+          ) : ( */}
+          <form
+            name="newsletter"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            className="contact-newsletter-form"
+            action="/"
+            // onSubmit={() => setSubmitted(true)}
+          >
+            <input type="hidden" name="form-name" value="newsletter" />
+            <input type="hidden" name="bot-field" />
+            <div className="contact-form-row">
+              <div className="contact-form-group">
+                <label htmlFor="firstname">Prénom *</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  placeholder="Votre prénom"
+                  required
+                  autoComplete="given-name"
+                />
               </div>
-              <div className="contact-form-row">
-                <div className="contact-form-group">
-                  <label htmlFor="email">Email *</label>
-                  <input type="email" name="email" id="email" placeholder="Votre email" required autoComplete="email" />
-                </div>
-                <div className="contact-form-group">
-                  <label htmlFor="phone">Numéro (optionnel)</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    placeholder="Votre numéro"
-                    autoComplete="tel"
-                    pattern="^(\+33|0)[1-9](\d{2}){4}$"
-                    title="Veuillez entrer un numéro français valide"
-                  />
-                </div>
+              <div className="contact-form-group">
+                <label htmlFor="lastname">Nom</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Votre nom" autoComplete="family-name" />
               </div>
-              <button type="submit" className="contact-btn">
-                S'inscrire
-              </button>
-            </form>
-          )}
+            </div>
+            <div className="contact-form-row">
+              <div className="contact-form-group">
+                <label htmlFor="email">Email *</label>
+                <input type="email" name="email" id="email" placeholder="Votre email" required autoComplete="email" />
+              </div>
+              <div className="contact-form-group">
+                <label htmlFor="phone">Numéro (optionnel)</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="Votre numéro"
+                  autoComplete="tel"
+                  pattern="^(\+33|0)[1-9](\d{2}){4}$"
+                  title="Veuillez entrer un numéro français valide"
+                />
+              </div>
+            </div>
+            <button type="submit" className="contact-btn">
+              S'inscrire
+            </button>
+          </form>
+          {/* )} */}
         </div>
       </div>
     </div>

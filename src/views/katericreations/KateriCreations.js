@@ -19,7 +19,7 @@ const KateriCreations = () => {
   return (
     <div className="kateri-creations">
       <div className="kateri-creations-container">
-        <div class="kateri-creations-content">
+        <div className="kateri-creations-content">
           <h3>✨ Créations intuitives inspirées des sagesses ancestrales</h3>
           <p>
             Il y a des élans qui viennent du cœur. Des gestes nés du silence, du souffle, d'un appel intérieur.
