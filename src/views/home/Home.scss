@@ -1,5 +1,5 @@
 @use '../../styles/constantes' as *;
-@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Great+Vibes&family=Merienda:wght@300..900&display=swap');
 
 .home {
   display: flex;
@@ -80,9 +80,9 @@
 }
 
 .home-title {
-  font-size: 5rem;
+  font-size: 2.5rem;
   color: $primary-color;
-  font-family: "Great Vibes", cursive;
+  font-family: "Merienda", cursive;
   
   @media (max-width: 1012px) {
     font-size: 4rem;
@@ -131,7 +131,7 @@
 }
 
 .signature {
-  font-family: "Great Vibes", cursive;
+  font-family: "Merienda", cursive;
   font-size: 2rem;
   text-align: right;
   margin: 2rem 0 0 0;

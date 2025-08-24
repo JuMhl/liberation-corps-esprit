@@ -12,6 +12,8 @@
   font-size: 1rem;
   margin-top: 0.5rem;
   transition: background 0.2s, transform 0.2s;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     background: $secondary-color;
