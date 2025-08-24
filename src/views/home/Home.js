@@ -8,6 +8,7 @@ import StageBanner from '../../components/home/stage-banner/StageBanner';
 import CardsAccompaniement from '../../components/home/cards-accompaniement/CardsAccompaniement';
 import NatureSession from '../../components/home/nature-session/NatureSession';
 import Caroussel from '../../components/caroussel/Caroussel';
+import ContactButton from '../../components/contact-button/ContactButton';
 
 import './Home.scss';
 
@@ -46,6 +47,9 @@ const Home = () => {
         <div className="home-header-photo-wrapper">
           <img src={portraitAcceuil} className="home-photo" alt="Catherine Charleux au bord de la mer" />
         </div>
+      </div>
+      <div className="home-header-contact-btn">
+        <ContactButton />
       </div>
       <div
         className="home-aquarelle-bg-section"

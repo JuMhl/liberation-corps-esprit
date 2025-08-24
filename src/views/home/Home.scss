@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
   padding: 0 2rem;
 }
 
@@ -93,8 +93,12 @@
 .home-header-text p {  
   opacity: 0;
   animation: fadeIn 0.5s ease-in forwards;
-  margin-bottom: 1.25rem; /* Espacement entre les paragraphes */
-  word-wrap: break-word; /* Permet de couper les mots longs si nécessaire */
+  margin-bottom: 1.25rem;
+  word-wrap: break-word;
+}
+
+.home-header-contact-btn {
+  margin: 1rem;
 }
 
 .home-aquarelle-bg-section {
@@ -171,6 +175,7 @@
     align-items: center;
     gap: 1rem;
     padding: 0 0.5rem;
+    margin-top: 0;
   }
 
   .home-header-logo-title-text {
@@ -199,7 +204,6 @@
     object-position: center 235%;
     transform: scale(2.5);
   }
-
 
   .home-header-text {
     margin: 0;

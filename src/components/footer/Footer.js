@@ -10,6 +10,7 @@ const Footer = () => {
     <footer className="footer bg-primary text-white d-flex align-items-center justify-content-center">
       <div className="info-container">
         <h1 className="title">Catherine Charleux</h1>
+        <p className="location">Saint-Raphaël (83700)</p>
         <div className="logo-container">
           <a href="https://wa.me/message/WMPXBDYMIGODH1" target="_blank" rel="noopener noreferrer">
             <img src={whatsappLogo} className="footer-logo" alt="whatsapp" />

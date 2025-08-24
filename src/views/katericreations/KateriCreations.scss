@@ -3,6 +3,8 @@
 .kateri-creations {
   min-height: 80vh;
   padding: 20px 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
 }
 
 .kateri-creations-container {

@@ -5,7 +5,10 @@
   justify-content: center;
   align-items: center;
   min-height: 84vh;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
 }
+
 .accompaniements-container {
   margin-top: 10px;
 }
@@ -66,6 +69,9 @@
   animation: fadeIn 0.3s;
   color: #907493;
 
+  p {
+    text-align: justify;
+  }
   ul, ol {
     text-align: left;
     padding-left: 1.5em;
@@ -77,6 +83,7 @@
 
 .chips {
   margin-top: 30px;
+  margin-bottom: 1rem;
 }
 
 .chip {

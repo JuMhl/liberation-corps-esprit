@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import ContactButton from '../../components/contact-button/ContactButton';
+
 import './Accompagnements.scss';
 
 const idToIdx = {
@@ -191,6 +193,7 @@ const Accompagnements = () => {
               </button>
               <div className="accordion-content" style={{ display: openIdx === idx ? 'block' : 'none' }}>
                 {item.description}
+                <ContactButton />
               </div>
             </div>
           ))}
