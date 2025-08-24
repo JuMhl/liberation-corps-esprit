@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import phone from '../../assets/logos/phone.svg';
 import email from '../../assets/logos/email.png';
 
