@@ -5,22 +5,9 @@
     <title>Admin</title>
   </head>
   <body>
-    <!-- Netlify CMS -->
+    <!-- Charge Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-    <!-- Netlify Identity uniquement sur /admin -->
+    <!-- Charge Netlify Identity (pour que CMS puisse utiliser Git Gateway) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        // Quand l'utilisateur termine l'inscription via le lien d'invite
-        window.netlifyIdentity.on("signup", () => {
-          document.location.href = "/admin/";
-        });
-
-        // Quand un utilisateur se connecte depuis /admin
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    </script>
   </body>
 </html>
