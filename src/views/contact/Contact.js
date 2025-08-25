@@ -5,8 +5,6 @@ import email from '../../assets/logos/email.png';
 import './Contact.scss';
 
 const Contact = () => {
-  // const [submitted, setSubmitted] = useState(false);
-
   return (
     <div className="contact">
       <div className="contact-content">
@@ -52,9 +50,7 @@ const Contact = () => {
 
         <div className="contact-newsletter-block">
           <h2 className="contact-calendly-title">📰 Inscrivez-vous à la Newsletter</h2>
-          {/* {submitted ? (
-            <div className="contact-note">✨ Merci pour votre inscription ! Vous recevrez bientôt nos actualités.</div>
-          ) : ( */}
+
           <form
             name="newsletter"
             method="POST"
@@ -62,7 +58,6 @@ const Contact = () => {
             netlify-honeypot="bot-field"
             className="contact-newsletter-form"
             action="/"
-            // onSubmit={() => setSubmitted(true)}
           >
             <input type="hidden" name="form-name" value="newsletter" />
             <input type="hidden" name="bot-field" />
@@ -105,7 +100,6 @@ const Contact = () => {
               S'inscrire
             </button>
           </form>
-          {/* )} */}
         </div>
       </div>
     </div>
