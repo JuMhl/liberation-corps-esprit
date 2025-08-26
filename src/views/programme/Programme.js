@@ -1,36 +1,51 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import { getProgrammes } from '../../utils/getProgrammes';
 import './Programme.scss';
 
 const Programme = () => {
+  const [currentProgramme, setCurrentProgramme] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProgramme = async () => {
+      try {
+        const programmes = await getProgrammes();
+        if (programmes.length > 0) {
+          // Prendre le programme le plus récent
+          setCurrentProgramme(programmes[0]);
+        }
+      } catch (error) {
+        console.error('Error loading programme:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProgramme();
+  }, []);
+
   return (
     <div className="programme">
       <div className="programme-content">
         <div className="programme-text">
           <div className="activities">
-            <h2>🌸 Au programme :</h2>
-            <ul>
-              <li>
-                Des séances d'harmonisation du corps et de l'esprit, en salle ou au cœur de la nature, pour relâcher les
-                tensions et retrouver l'unité intérieure.
-              </li>
-              <li>Des voyages sonores, véritables bains vibratoires, pour apaiser le mental et éveiller les sens.</li>
-              <li>
-                Une balade sensorielle, pour se reconnecter à soi et à la nature par les 5 sens. Écouter, sentir,
-                toucher, voir, goûter, se connecter à ses émotions.
-              </li>
-              <li>Et des massages au bol en individuel, pour une détente profonde, au cabinet ou à domicile.</li>
-            </ul>
+            {loading ? (
+              <p>Chargement du programme...</p>
+            ) : currentProgramme ? (
+              <>
+                <h2>{currentProgramme.title || 'Au programme :'}</h2>
+                <ReactMarkdown>{currentProgramme.content}</ReactMarkdown>
+              </>
+            ) : (
+              <p>Aucun programme disponible pour le moment.</p>
+            )}
           </div>
 
           <p className="note">
             ✨ Toutes les activités se font sur inscription, les places sont limitées pour préserver l'intimité et la
             qualité de chaque rencontre.
           </p>
-        </div>
-
-        <div className="programme-container">
-          {/* <img src={programmeActuel} className="programme-sizing" alt="programme" /> */}
         </div>
       </div>
     </div>
