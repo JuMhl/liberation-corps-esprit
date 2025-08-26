@@ -17,19 +17,23 @@ const Contact = () => {
           </p>
           <div className="contact-infos">
             <div className="contact-info">
-              <img src={phone} className="contact-logo" alt="Téléphone" />
-              <span>07 45 04 06 63</span>
+              <a href="tel:0745040663" className="contact-info-link">
+                <img src={phone} className="contact-logo" alt="Téléphone" />
+                <span>07 45 04 06 63</span>
+              </a>
             </div>
             <div className="contact-info">
-              <img src={email} className="contact-logo" alt="Email" />
-              <span>c.charleux83@gmail.com</span>
+              <a href="mailto:c.charleux83@gmail.com" className="contact-info-link">
+                <img src={email} className="contact-logo" alt="Email" />
+                <span>c.charleux83@gmail.com</span>
+              </a>
             </div>
             <div className="contact-info">
               <a
                 href="https://wa.me/message/WMPXBDYMIGODH1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="contact-whatsapp"
+                className="contact-info-link"
               >
                 WhatsApp Business
               </a>

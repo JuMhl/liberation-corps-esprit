@@ -61,7 +61,10 @@
   fill: #268282;
 }
 
-.contact-whatsapp {
+.contact-info-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: #268282;
   font-weight: bold;
   text-decoration: none;
@@ -86,26 +89,6 @@
   font-weight: 500;
   margin-bottom: 0.5rem;
   text-align: center;
-}
-
-.contact-link {
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  background-color: $primary-color;
-  padding: 12px 28px;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(38,130,130,0.08);
-  &:hover {
-    background-color: #268282;
-    transform: scale(1.05);
-  }
-  &:active {
-    transform: scale(0.97);
-  }
 }
 
 .contact-note {
@@ -227,10 +210,6 @@
   .contact-calendly-title {
     font-size: 1rem;
     margin-bottom: 0.3rem;
-  }
-  .contact-link {
-    font-size: 0.9rem;
-    padding: 10px 16px;
   }
   .contact-note {
     font-size: 0.92rem;
