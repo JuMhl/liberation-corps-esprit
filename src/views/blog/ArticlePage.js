@@ -78,7 +78,7 @@ const ArticlePage = () => {
     <div className="article-page">
       {article.image && (
         <div className="article-header-image">
-          <img src={article.image} alt={article.title || "Image de l'article"} />
+          <img src={article.image} alt={article.title || ''} />
         </div>
       )}
       <div className="article-content">
@@ -92,7 +92,7 @@ const ArticlePage = () => {
             <div className="gallery-grid">
               {article.gallery.map((image, index) => (
                 <div key={index} className="gallery-item">
-                  <img src={image} alt={`Image ${index + 1}`} />
+                  <img src={image} alt="" />
                 </div>
               ))}
             </div>

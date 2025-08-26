@@ -77,7 +77,7 @@ const Blog = () => {
             <Link to={`/blog/${article.slug}`} key={index} className="article-card">
               {article.image && (
                 <div className="article-image">
-                  <img src={article.image} alt={article.title || 'Article image'} />
+                  <img src={article.image} alt={article.title || ''} />
                 </div>
               )}
               <div className="article-info">
