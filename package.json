@@ -8,6 +8,7 @@
     "cra-template": "1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.1.5",
     "react-scripts": "5.0.1",
     "sass": "^1.87.0"
@@ -41,7 +42,9 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.25.9",
+    "frontmatter-markdown-loader": "^3.7.0",
     "gh-pages": "^6.3.0",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "raw-loader": "^4.0.2"
   }
 }
