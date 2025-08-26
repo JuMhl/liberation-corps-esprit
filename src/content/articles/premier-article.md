@@ -2,10 +2,8 @@
 title: Qui je suis – Mon chemin vers l’accompagnement
 date: 2025-08-26T12:55:33.042Z
 image: /uploads/1751899330369.png
-gallery:
-  - /uploads/1751899330369.png
-  - /uploads/1749113535888.jpeg
 ---
+
 Pendant plus de 35 ans, j’ai travaillé dans l’univers administratif, entre secrétariat et comptabilité. Un parcours "stable", rassurant en apparence, mais dans lequel je m’effaçais peu à peu. Je faisais ce qu’on attendait de moi. Je m’adaptais, tout le temps, à tout… À tel point que je ne savais plus vraiment qui j’étais ni ce que je voulais profondément.
 
 Et puis, un jour, c’est mon corps qui a dit stop. L’épuisement, la perte de sens, les douleurs, la sensation de ne plus tenir… Je suis passée par cette nuit intérieure que beaucoup connaissent, mais dont on parle peu.
@@ -20,7 +18,7 @@ Je propose un espace de douceur, de sécurité et de respiration. Un accompagnem
 
 💫 Parce que parfois, on n’a pas besoin de solution. Juste d’un espace pour exister autrement.
 
-- - -
+---
 
 🔗 **Je partage ici mes réflexions, mes outils, et des ressources autour du stress, de la reconnexion au corps, et de l’accompagnement.**
 

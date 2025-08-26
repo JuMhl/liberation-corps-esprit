@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import matter from 'gray-matter';
+import Caroussel from '../../components/caroussel/Caroussel';
 import './Blog.scss';
 
 const ArticlePage = () => {
@@ -91,13 +92,7 @@ const ArticlePage = () => {
         {article.gallery && article.gallery.length > 0 && (
           <div className="article-gallery">
             <h2>Galerie</h2>
-            <div className="gallery-grid">
-              {article.gallery.map((image, index) => (
-                <div key={index} className="gallery-item">
-                  <img src={image} alt="" />
-                </div>
-              ))}
-            </div>
+            <Caroussel images={article.gallery} title="" />
           </div>
         )}
       </div>
