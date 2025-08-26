@@ -5,7 +5,8 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.6",
-    "cra-template": "1.2.0",
+    "buffer": "^6.0.3",
+    "gray-matter": "^4.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^10.1.0",
@@ -14,9 +15,9 @@
     "sass": "^1.87.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -42,9 +43,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-private-property-in-object": "^7.25.9",
-    "frontmatter-markdown-loader": "^3.7.0",
     "gh-pages": "^6.3.0",
     "prettier": "^2.8.1",
-    "raw-loader": "^4.0.2"
+    "react-app-rewired": "^2.2.1"
   }
 }

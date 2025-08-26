@@ -54,7 +54,23 @@
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
-    transform-origin: 1px;
+    transform-origin: center;
+  }
+
+  &.open {
+    span {
+      &:first-child {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      
+      &:last-child {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
   }
 }
 

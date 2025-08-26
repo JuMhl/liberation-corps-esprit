@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getArticles } from '../../utils/getArticles';
 import './Blog.scss';
 
 const Blog = () => {
@@ -9,33 +10,8 @@ const Blog = () => {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        const context = require.context('../../content/articles', false, /\.md$/);
-        const articles = await Promise.all(
-          context.keys().map(async (key) => {
-            try {
-              // Extraire le nom du fichier (slug) du chemin
-              const slug = key.replace(/^\.\/(.*).md$/, '$1');
-
-              // Charger le contenu du fichier markdown
-              const content = await import(`../../content/articles/${slug}.md`);
-              const frontmatter = content.attributes || {};
-
-              return {
-                slug,
-                title: frontmatter.title,
-                date: frontmatter.date,
-                image: frontmatter.image,
-                gallery: frontmatter.gallery || [],
-                content: content.body || ''
-              };
-            } catch (error) {
-              console.error(`Error loading article:`, error);
-              return null;
-            }
-          })
-        );
-
-        // Filtrer les articles nuls et trier par date
+        const articles = await getArticles();
+        console.log(articles);
         const validArticles = articles
           .filter((article) => article !== null)
           .sort((a, b) => new Date(b.date) - new Date(a.date));

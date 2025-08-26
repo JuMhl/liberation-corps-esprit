@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <div className="nav-container">
-        <button className="hamburger" onClick={toggleMenu}>
+        <button className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>

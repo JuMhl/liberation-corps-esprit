@@ -107,6 +107,8 @@
   }
 
   .article-content {
+    color: $basic-text-color;
+
     h1 {
       color: $primary-color;
       margin-bottom: 0.5rem;
@@ -154,6 +156,25 @@
             }
           }
         }
+      }
+    }
+  }
+
+  .back-to-blog {
+    text-align: center;
+    margin-top: 3rem;
+    
+    a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background-color: $primary-color;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: $secondary-color;
       }
     }
   }

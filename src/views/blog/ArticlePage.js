@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import matter from 'gray-matter';
 import './Blog.scss';
 
 const ArticlePage = () => {
@@ -14,17 +15,18 @@ const ArticlePage = () => {
     const loadArticle = async () => {
       try {
         const content = await import(`../../content/articles/${slug}.md`);
+        const { data: frontmatter, content: markdownContent } = matter(content.default);
 
-        if (!content) {
+        if (!frontmatter) {
           throw new Error('Article non trouvé');
         }
 
         setArticle({
-          title: content.attributes?.title,
-          date: content.attributes?.date,
-          image: content.attributes?.image,
-          gallery: content.attributes?.gallery || [],
-          content: content.body || ''
+          title: frontmatter.title,
+          date: frontmatter.date,
+          image: frontmatter.image,
+          gallery: frontmatter.gallery || [],
+          content: markdownContent
         });
       } catch (error) {
         console.error('Error loading article:', error);
@@ -63,7 +65,7 @@ const ArticlePage = () => {
     );
   }
 
-  if (!article || !article.metadata) {
+  if (!article) {
     return (
       <div className="article-page">
         <div className="error">
@@ -98,6 +100,9 @@ const ArticlePage = () => {
             </div>
           </div>
         )}
+      </div>
+      <div className="back-to-blog">
+        <Link to="/blog">Revenir au blog</Link>
       </div>
     </div>
   );
