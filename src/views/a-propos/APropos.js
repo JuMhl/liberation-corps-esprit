@@ -9,6 +9,7 @@ const APropos = () => {
   return (
     <div className="a-propos">
       <div className="a-propos__container">
+        <span className="main-title">À Propos</span>
         {/* Bloc 1*/}
         <div className="a-propos__row a-propos__row--reverse">
           <div className="a-propos__col a-propos__col--text">

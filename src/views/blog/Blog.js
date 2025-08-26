@@ -36,7 +36,7 @@ const Blog = () => {
   if (loading) {
     return (
       <div className="blog">
-        <h1>Blog</h1>
+        <span className="main-title">Blog</span>
         <div className="loading">Chargement des articles...</div>
       </div>
     );
@@ -44,7 +44,7 @@ const Blog = () => {
 
   return (
     <div className="blog">
-      <h1>Blog</h1>
+      <span className="main-title">Blog</span>
       <div className="articles-grid">
         {articles.length === 0 ? (
           <div className="no-articles">Aucun article disponible pour le moment.</div>

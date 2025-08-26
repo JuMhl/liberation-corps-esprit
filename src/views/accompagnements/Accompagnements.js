@@ -177,6 +177,7 @@ const Accompagnements = () => {
   return (
     <div className="accompaniements">
       <div className="accompaniements-container">
+        <span className="main-title">Accompagnements</span>
         <div className="accordion-list">
           {accompagnements.map((item, idx) => (
             <div

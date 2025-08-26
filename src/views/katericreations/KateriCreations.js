@@ -19,6 +19,7 @@ const KateriCreations = () => {
   return (
     <div className="kateri-creations">
       <div className="kateri-creations-container">
+        <span className="main-title">Kateri Creations</span>
         <div className="kateri-creations-content">
           <h3>✨ Créations intuitives inspirées des sagesses ancestrales</h3>
           <p>

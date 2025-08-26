@@ -12,7 +12,8 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.1.5",
     "react-scripts": "5.0.1",
-    "sass": "^1.87.0"
+    "sass": "^1.91.0",
+    "sass-loader": "^16.0.5"
   },
   "scripts": {
     "start": "react-app-rewired start",
