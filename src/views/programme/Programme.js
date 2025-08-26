@@ -36,6 +36,11 @@ const Programme = () => {
               <>
                 <h2>{currentProgramme.title || 'Au programme :'}</h2>
                 <ReactMarkdown>{currentProgramme.content}</ReactMarkdown>
+                {currentProgramme.image && (
+                  <div className="programme-image">
+                    <img src={currentProgramme.image} alt={currentProgramme.title} />
+                  </div>
+                )}
               </>
             ) : (
               <p>Aucun programme disponible pour le moment.</p>

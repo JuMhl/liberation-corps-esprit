@@ -19,7 +19,8 @@ export function getProgrammes() {
           slug,
           title: frontmatter.title,
           date: frontmatter.date,
-          content: markdownContent
+          content: markdownContent,
+          image: frontmatter.image
         };
       } catch (error) {
         console.error(`Error loading programme ${key}:`, error);
