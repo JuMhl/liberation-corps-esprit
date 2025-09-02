@@ -1,29 +1,19 @@
 import matter from 'gray-matter';
 
 export function getProgrammes() {
-  const context = require.context('../content/programme', false, /\.md$/);
+  const modules = import.meta.glob('../content/programme/*.md', { query: '?raw', import: 'default' });
 
   return Promise.all(
-    context.keys().map(async (key) => {
+    Object.entries(modules).map(async ([path, loader]) => {
       try {
-        // Extraire le slug du nom de fichier
-        const slug = key.replace(/^\.\/(.*).md$/, '$1');
-
-        // Charger le contenu brut du fichier markdown
-        const content = await import(`../content/programme/${slug}.md`);
-
-        // Parser le contenu avec gray-matter
-        const { data: frontmatter, content: markdownContent } = matter(content.default);
-
-        return {
-          slug,
-          title: frontmatter.title,
-          date: frontmatter.date,
-          content: markdownContent,
-          image: frontmatter.image
-        };
+        const slug = path.split('/').pop().replace(/\.md$/, '');
+        const raw = await loader();
+  const parsed = matter(raw || '');
+  const frontmatter = parsed.data || {};
+  const markdownContent = parsed.content || '';
+  return { slug, title: frontmatter.title, date: frontmatter.date, content: markdownContent, image: frontmatter.image };
       } catch (error) {
-        console.error(`Error loading programme ${key}:`, error);
+        console.error(`Error loading programme ${path}:`, error);
         return null;
       }
     })

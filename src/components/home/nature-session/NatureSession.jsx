@@ -1,7 +1,6 @@
 import React from 'react';
 import './NatureSession.scss';
-import natureImg from '../../../assets/photos/saintraphael-plage-debarquement.jpg';
-
+import natureImg from '@/assets/photos/saintraphael-plage-debarquement.jpg';
 const NatureSession = () => (
   <section className="nature-session">
     <div className="nature-session__content">
@@ -24,5 +23,4 @@ const NatureSession = () => (
     </div>
   </section>
 );
-
 export default NatureSession;

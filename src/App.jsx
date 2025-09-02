@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Footer from './components/footer/Footer';
-import NavBar from './components/navbar/NavBar';
-import Home from './views/home/Home';
-import Accompagnements from './views/accompagnements/Accompagnements';
-import KateriCreations from './views/katericreations/KateriCreations';
-import APropos from './views/a-propos/APropos';
-import Contact from './views/contact/Contact';
-import Programme from './views/programme/Programme';
-import Blog from './views/blog/Blog';
-import ArticlePage from './views/blog/ArticlePage';
+import Footer from '@/components/footer/Footer.jsx';
+import NavBar from '@/components/navbar/NavBar.jsx';
+import Home from '@/views/home/Home.jsx';
+import Accompagnements from '@/views/accompagnements/Accompagnements.jsx';
+import KateriCreations from '@/views/katericreations/KateriCreations.jsx';
+import APropos from '@/views/a-propos/APropos.jsx';
+import Contact from '@/views/contact/Contact.jsx';
+import Programme from '@/views/programme/Programme.jsx';
+import Blog from '@/views/blog/Blog.jsx';
+import ArticlePage from '@/views/blog/ArticlePage.jsx';
 
 import './App.scss';
 

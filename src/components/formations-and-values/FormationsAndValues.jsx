@@ -1,6 +1,5 @@
 import React from 'react';
 import './FormationsAndValues.scss';
-
 const FormationsAndValues = () => (
   <section className="formations-values">
     <div className="formations-values__block">
@@ -68,5 +67,4 @@ const FormationsAndValues = () => (
     </div>
   </section>
 );
-
 export default FormationsAndValues;

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://liberationducorpsetdelesprit.fr/" />
+    <meta name="description" content="Catherine Charleux vous accompagne dans la Libération du corps et de l'esprit par le mouvement et le son." />
+    <link rel="apple-touch-icon" href="/logo-2025.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <title>Libération du Corps et de l'Esprit - Catherine Charleux</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (window.location.hash.includes("invite_token")) {
+            window.netlifyIdentity.on("signup", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="newsletter" />
+      <input type="hidden" name="bot-field" />
+      <input type="text" name="firstname" />
+      <input type="text" name="lastname" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+    </form>
+  <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>

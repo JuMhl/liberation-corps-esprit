@@ -1,29 +1,20 @@
 import matter from 'gray-matter';
 
+// Vite replacement for webpack require.context using import.meta.glob
 export function getArticles() {
-  const context = require.context('../content/articles', false, /\.md$/);
+  const modules = import.meta.glob('../content/articles/*.md', { query: '?raw', import: 'default' });
 
   return Promise.all(
-    context.keys().map(async (key) => {
+    Object.entries(modules).map(async ([path, loader]) => {
       try {
-        // Extraire le slug du nom de fichier
-        const slug = key.replace(/^\.\/(.*).md$/, '$1');
-
-        // Charger le contenu brut du fichier markdown
-        const content = await import(`../content/articles/${slug}.md`);
-
-        // Parser le contenu avec gray-matter
-        const { data: frontmatter, content: markdownContent } = matter(content.default);
-
-        return {
-          slug,
-          title: frontmatter.title,
-          date: frontmatter.date,
-          image: frontmatter.image,
-          content: markdownContent
-        };
+        const slug = path.split('/').pop().replace(/\.md$/, '');
+        const raw = await loader();
+  const parsed = matter(raw || '');
+  const frontmatter = parsed.data || {};
+  const markdownContent = parsed.content || '';
+  return { slug, title: frontmatter.title, date: frontmatter.date, image: frontmatter.image, content: markdownContent };
       } catch (error) {
-        console.error(`Error loading article ${key}:`, error);
+        console.error(`Error loading article ${path}:`, error);
         return null;
       }
     })
