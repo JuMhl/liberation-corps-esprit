@@ -1,9 +1,7 @@
-// Import Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Bootstrap (migration depuis @import vers @use). Utilisé seul ici car les styles des composants
+// sont déjà chargés via leurs imports dédiés dans les fichiers .jsx.
+@use 'bootstrap/scss/bootstrap' as *;
 
-// Import vos styles personnalisés
-@import './components/navbar/NavBar';
-@import './components/footer/Footer';
-@import './components/stage-banner/StageBanner';
-@import './views/home/Home';
-@import './views/programme/Programme';
+// Les anciens @import de fichiers locaux ont été retirés pour éviter les doublons.
+// Si vous vouliez un fichier "agrégateur" global, ré-importez-les avec @use mais
+// attention aux doublons de CSS (les composants les importent déjà eux-mêmes).
