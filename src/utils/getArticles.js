@@ -9,10 +9,16 @@ export function getArticles() {
       try {
         const slug = path.split('/').pop().replace(/\.md$/, '');
         const raw = await loader();
-  const parsed = matter(raw || '');
-  const frontmatter = parsed.data || {};
-  const markdownContent = parsed.content || '';
-  return { slug, title: frontmatter.title, date: frontmatter.date, image: frontmatter.image, content: markdownContent };
+        const parsed = matter(raw || '');
+        const frontmatter = parsed.data || {};
+        const markdownContent = parsed.content || '';
+        return {
+          slug,
+          title: frontmatter.title,
+          date: frontmatter.date,
+          image: frontmatter.image,
+          content: markdownContent
+        };
       } catch (error) {
         console.error(`Error loading article ${path}:`, error);
         return null;

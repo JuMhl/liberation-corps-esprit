@@ -8,10 +8,16 @@ export function getProgrammes() {
       try {
         const slug = path.split('/').pop().replace(/\.md$/, '');
         const raw = await loader();
-  const parsed = matter(raw || '');
-  const frontmatter = parsed.data || {};
-  const markdownContent = parsed.content || '';
-  return { slug, title: frontmatter.title, date: frontmatter.date, content: markdownContent, image: frontmatter.image };
+        const parsed = matter(raw || '');
+        const frontmatter = parsed.data || {};
+        const markdownContent = parsed.content || '';
+        return {
+          slug,
+          title: frontmatter.title,
+          date: frontmatter.date,
+          content: markdownContent,
+          image: frontmatter.image
+        };
       } catch (error) {
         console.error(`Error loading programme ${path}:`, error);
         return null;
