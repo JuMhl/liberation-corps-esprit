@@ -120,6 +120,11 @@
     .date {
       color: $secondary-color;
       margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    p, li {
+      text-align: justify;
     }
 
     img {
