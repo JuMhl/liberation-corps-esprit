@@ -1,10 +1,16 @@
 import React from 'react';
+import SEO from '@/components/seo/SEO.jsx';
 import portraitAPropos from '@/assets/photos/portrait_mer_tambour.jpg';
 import natureAPropos from '@/assets/photos/foret.jpg';
 import FormationsAndValues from '@/components/formations-and-values/FormationsAndValues.jsx';
 import './APropos.scss';
 const APropos = () => (
   <div className="a-propos">
+    <SEO
+      title="À propos"
+      description="Parcours, valeurs et approche de Catherine pour accompagner stress, fatigue émotionnelle et quête de sens via sonothérapie et relaxation à Fréjus."
+      jsonLd={{ '@context':'https://schema.org','@type':'AboutPage', name:'À propos Catherine', description:'Praticienne sonothérapie et relaxation.' }}
+    />
     <div className="a-propos__container">
       <span className="main-title">À Propos</span>
       <div className="a-propos__row a-propos__row--reverse">

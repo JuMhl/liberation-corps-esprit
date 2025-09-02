@@ -1,9 +1,20 @@
 import React from 'react';
+import SEO from '@/components/seo/SEO.jsx';
 import phone from '@/assets/logos/phone.svg';
 import email from '@/assets/logos/email.png';
 import './Contact.scss';
 const Contact = () => (
   <div className="contact">
+    <SEO
+      title="Contact"
+      description="Prendre rendez-vous pour une séance de sonothérapie, massage au bol tibétain ou voyage sonore à Fréjus / Saint-Raphaël. Téléphone, email, réservation en ligne."
+      jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Contact sonothérapie Fréjus',
+        description: 'Coordonnées et réservation pour séances de relaxation, voyages sonores, massage au bol.'
+      }}
+    />
     <div className="contact-content">
       <div className="contact-text-block">
         <span className="main-title">Prendre contact</span>

@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import matter from 'gray-matter';
 import Caroussel from '@/components/caroussel/Caroussel.jsx';
+import SEO from '@/components/seo/SEO.jsx';
 import './Blog.scss';
 const ArticlePage = () => {
   const { slug } = useParams();
@@ -28,8 +29,22 @@ const ArticlePage = () => {
   if (loading) return <div className="article-page"><div className="loading">Chargement de l'article...</div></div>;
   if (error) return <div className="article-page"><div className="error"><h2>Erreur</h2><p>{error}</p><button onClick={() => navigate('/blog')}>Retourner au blog</button></div></div>;
   if (!article) return <div className="article-page"><div className="error"><h2>Article non disponible</h2><button onClick={() => navigate('/blog')}>Retourner au blog</button></div></div>;
+  const jsonLd = article ? {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    datePublished: article.date,
+    author: { '@type': 'Person', name: 'Praticienne' }
+  } : null;
   return (
     <div className="article-page">
+      <SEO
+        title={article.title}
+        description={article.content?.substring(0, 150).replace(/\n/g, ' ') + '...'}
+        image={article.image}
+        type="article"
+        jsonLd={jsonLd}
+      />
       {article.image && <div className="article-header-image"><img src={article.image} alt={article.title || ''} /></div>}
       <div className="article-content">
         <h1>{article.title || 'Sans titre'}</h1>

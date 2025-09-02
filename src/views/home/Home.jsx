@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '@/components/seo/SEO.jsx';
 import logo from '@/assets/logos/logo_nu_fond_transparent.png';
 import portraitAcceuil from '@/assets/photos/portrait-zen-esterel.jpg';
 import aquarelle from '@/assets/photos/aquarelle.jpg';
@@ -17,6 +18,34 @@ import img6 from '@/assets/temoignages/witness6.jpg';
 const imagesCarousel = [img1, img2, img3, img4, img5, img6];
 const Home = () => (
   <div className="home">
+    <SEO
+      title="Accueil"
+      description="Sonothérapie, relaxation et accompagnements bien-être à Fréjus / Saint-Raphaël pour réduire le stress, apaiser le mental et retrouver l'harmonie corps-esprit."
+      image="/logo-2025.png"
+      jsonLd={[
+        {
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: "Libération du Corps et de l'Esprit",
+          url: 'https://liberationducorpsetdelesprit.fr',
+          image: 'https://liberationducorpsetdelesprit.fr/logo-2025.png',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Fréjus',
+            postalCode: '83600',
+            addressCountry: 'FR'
+          },
+          areaServed: ['Fréjus', 'Saint-Raphaël', 'Var'],
+          description: 'Sonothérapie, relaxation, voyage sonore et massage bol tibétain à Fréjus / Saint-Raphaël.',
+          serviceOffered: [
+            { '@type': 'Service', name: 'Relaxation bio-dynamique' },
+            { '@type': 'Service', name: 'Voyage sonore méditatif' },
+            { '@type': 'Service', name: 'Massage au bol tibétain' },
+            { '@type': 'Service', name: 'Accompagnement gestion du stress' }
+          ]
+        }
+      ]}
+    />
     <div className="home-header">
       <div className="home-header-logo-title-text">
         <div className="home-header-logo-title">

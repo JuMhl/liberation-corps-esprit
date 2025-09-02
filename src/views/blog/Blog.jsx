@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getArticles } from '@/utils/getArticles';
 import './Blog.scss';
+import SEO from '@/components/seo/SEO.jsx';
 const Blog = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,11 @@ const Blog = () => {
   if (loading) return <div className="blog"><span className="main-title">Blog</span><div className="loading">Chargement des articles...</div></div>;
   return (
     <div className="blog">
+      <SEO
+        title="Blog sonothérapie & relaxation"
+        description="Articles sur la gestion du stress, la sonothérapie, le voyage sonore, la relaxation profonde et l'harmonisation corps-esprit."
+        jsonLd={{ '@context':'https://schema.org','@type':'CollectionPage', name:'Blog sonothérapie', description:'Articles bien-être et gestion du stress.' }}
+      />
       <span className="main-title">Blog</span>
       <div className="articles-grid">
         {articles.length === 0 ? <div className="no-articles">Aucun article disponible pour le moment.</div> :

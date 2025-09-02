@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import SEO from '@/components/seo/SEO.jsx';
 import { useLocation } from 'react-router-dom';
 import ContactButton from '@/components/contact-button/ContactButton.jsx';
 import './Accompagnements.scss';
@@ -45,6 +46,17 @@ export default function Accompagnements() {
 	const toggle = (idx) => setOpenIdx(openIdx === idx ? null : idx);
 	return (
 		<div className="accompaniements">
+			<SEO
+				title="Accompagnements sonothérapie & relaxation"
+				description="Relaxation bio-dynamique, voyage sonore, massage au bol tibétain et accompagnement mieux-être à Fréjus / Saint-Raphaël. Réduire stress et tensions."
+				jsonLd={{
+					'@context': 'https://schema.org',
+					'@type': 'Service',
+					name: 'Accompagnements bien-être sonothérapie',
+					areaServed: ['Fréjus','Saint-Raphaël','Var'],
+					description: 'Relaxation bio-dynamique, voyage sonore méditatif, massage au bol tibétain, accompagnement gestion du stress.'
+				}}
+			/>
 			<div className="accompaniements-container">
 				<span className="main-title">Accompagnements</span>
 				<div className="accordion-list">

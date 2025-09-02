@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from '@/components/seo/SEO.jsx';
 import ReactMarkdown from 'react-markdown';
 import { getProgrammes } from '@/utils/getProgrammes';
 import './Programme.scss';
@@ -20,6 +21,17 @@ const Programme = () => {
   }, []);
   return (
     <div className="programme">
+      <SEO
+        title={currentProgramme?.title ? `Programme - ${currentProgramme.title}` : 'Programme'}
+        description="Programme des séances : relaxation, voyages sonores, massages vibratoires et ateliers bien-être à Fréjus / Saint-Raphaël. Inscription nécessaire."
+        jsonLd={currentProgramme ? {
+          '@context': 'https://schema.org',
+          '@type': 'Event',
+          name: currentProgramme.title,
+          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+          eventStatus: 'https://schema.org/EventScheduled'
+        } : null}
+      />
       <div className="programme-content">
         <div className="programme-text">
           <div className="activities">

@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '@/components/seo/SEO.jsx';
 import './KateriCreations.scss';
 import Caroussel from '@/components/caroussel/Caroussel.jsx';
 import aesteticDreamcatcher from '@/assets/katericreations/aesteticDreamcatcher.png';
@@ -13,6 +14,11 @@ const creations = [
 ];
 const KateriCreations = () => (
   <div className="kateri-creations">
+    <SEO
+      title="Kateri Creations"
+      description="Créations vibratoires artisanales : attrapes-rêves, sacs médecine, pierres peintes – prolongement énergétique des accompagnements bien-être."
+      jsonLd={{ '@context':'https://schema.org','@type':'CreativeWorkSeries', name:'Kateri Creations', description:'Objets vibratoires artisanaux.' }}
+    />
     <div className="kateri-creations-container">
       <span className="main-title">Kateri Creations</span>
       <div className="kateri-creations-content">
