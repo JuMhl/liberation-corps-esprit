@@ -29,7 +29,7 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Mois du programme', name: 'title', widget: 'string' }
+      - { label: 'Titre (optionnel)', name: 'title', widget: 'string', required: false }
       - { label: 'Date', name: 'date', widget: 'datetime' }
-      - { label: 'Contenu', name: 'body', widget: 'markdown' }
+      - { label: 'Contenu (optionnel)', name: 'body', widget: 'markdown', required: false }
       - { label: 'Image (optionnel)', name: 'image', widget: 'image', required: false }

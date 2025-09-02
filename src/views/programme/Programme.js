@@ -34,7 +34,7 @@ const Programme = () => {
               <p>Chargement du programme...</p>
             ) : currentProgramme ? (
               <>
-                <h2>{currentProgramme.title || 'Au programme :'}</h2>
+                {currentProgramme.title ? <h2>{currentProgramme.title}</h2> : null}
                 <ReactMarkdown>{currentProgramme.content}</ReactMarkdown>
                 {currentProgramme.image && (
                   <div className="programme-image">
