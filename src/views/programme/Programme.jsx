@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '@/components/seo/SEO.jsx';
+import Button from '@/components/button/Button.jsx';
 import ReactMarkdown from 'react-markdown';
 import { getProgrammes } from '@/utils/getProgrammes';
 import './Programme.scss';
@@ -40,6 +41,9 @@ const Programme = () => {
               <ReactMarkdown>{currentProgramme.content}</ReactMarkdown>
               {currentProgramme.image && <div className="programme-image"><img src={currentProgramme.image} alt={currentProgramme.title} /></div>}
             </> : <p>Aucun programme disponible pour le moment.</p>}
+            <div className="btn-container">
+              <Button to="/contact" variant="primary">Contactez-moi</Button>
+            </div>
           </div>
           <p className="note">✨ Toutes les activités se font sur inscription, les places sont limitées pour préserver l'intimité et la qualité de chaque rencontre.</p>
         </div>

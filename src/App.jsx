@@ -9,10 +9,7 @@ import Contact from '@/views/contact/Contact.jsx';
 import Programme from '@/views/programme/Programme.jsx';
 import Blog from '@/views/blog/Blog.jsx';
 import ArticlePage from '@/views/blog/ArticlePage.jsx';
-import RelaxationBiodynamique from '@/views/services/RelaxationBiodynamique.jsx';
-import VoyageSonore from '@/views/services/VoyageSonore.jsx';
-import MassageBolTibetain from '@/views/services/MassageBolTibetain.jsx';
-import SonotherapieStressAnxiete from '@/views/services/SonotherapieStressAnxiete.jsx';
+import NotFound from '@/views/NotFound/NotFound.jsx';
 
 import './App.scss';
 
@@ -31,10 +28,7 @@ function App() {
             <Route path="/blog/:slug" element={<ArticlePage />} />
             <Route path="/kateri-creations" element={<KateriCreations />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/relaxation-biodynamique-frejus-saint-raphael" element={<RelaxationBiodynamique />} />
-            <Route path="/voyage-sonore-meditatif-frejus" element={<VoyageSonore />} />
-            <Route path="/massage-bol-tibetain-var" element={<MassageBolTibetain />} />
-            <Route path="/sonotherapie-stress-anxiete" element={<SonotherapieStressAnxiete />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />

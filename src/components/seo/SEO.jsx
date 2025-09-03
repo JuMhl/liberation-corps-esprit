@@ -21,7 +21,7 @@ function ensureAbsolute(url) {
   return `${BASE_URL.replace(/\/$/, '')}/${url}`;
 }
 
-const SEO = ({ title, description, image, type = 'website', jsonLd, canonical }) => {
+const SEO = ({ title, description, image, type = 'website', jsonLd, canonical, noindex = false, nofollow = false }) => {
   const location = useLocation();
   const path = location.pathname + (location.search || '');
   const fullUrl = ensureAbsolute(canonical || path);
@@ -63,6 +63,18 @@ const SEO = ({ title, description, image, type = 'website', jsonLd, canonical })
     setProperty('twitter:title', pageTitle);
     setProperty('twitter:description', description);
     setProperty('twitter:image', ogImage);
+
+    // robots noindex/nofollow
+    let robots = document.head.querySelector("meta[name='robots']");
+    if (!robots) {
+      robots = document.createElement('meta');
+      robots.setAttribute('name', 'robots');
+      document.head.appendChild(robots);
+    }
+    const directives = [];
+    if (noindex) directives.push('noindex'); else directives.push('index');
+    if (nofollow) directives.push('nofollow'); else directives.push('follow');
+    robots.setAttribute('content', directives.join(', '));
 
     // Canonical link
     let link = document.head.querySelector("link[rel='canonical']");

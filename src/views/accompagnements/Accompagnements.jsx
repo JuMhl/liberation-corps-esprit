@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import SEO from '@/components/seo/SEO.jsx';
 import { useLocation } from 'react-router-dom';
-import ContactButton from '@/components/contact-button/ContactButton.jsx';
+import Button from '@/components/button/Button.jsx';
 import './Accompagnements.scss';
 const idToIdx = { harmonisation: 0, voyages: 2, accompagnement: 3 };
 const accompagnements = [
@@ -69,7 +69,7 @@ export default function Accompagnements() {
 							</button>
 							<div className="accordion-content" style={{ display: openIdx === idx ? 'block' : 'none' }}>
 								{item.description}
-								<ContactButton />
+								<Button to="/contact" variant="primary">Contactez-moi</Button>
 							</div>
 						</div>
 					))}

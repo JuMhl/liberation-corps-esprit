@@ -7,7 +7,7 @@ import StageBanner from '@/components/home/stage-banner/StageBanner.jsx';
 import CardsAccompaniement from '@/components/home/cards-accompaniement/CardsAccompaniement.jsx';
 import NatureSession from '@/components/home/nature-session/NatureSession.jsx';
 import Caroussel from '@/components/caroussel/Caroussel.jsx';
-import ContactButton from '@/components/contact-button/ContactButton.jsx';
+import Button from '@/components/button/Button.jsx';
 import './Home.scss';
 import img1 from '@/assets/temoignages/witness1.jpg';
 import img2 from '@/assets/temoignages/witness2.jpg';
@@ -71,7 +71,7 @@ const Home = () => (
       </div>
     </div>
     <div className="home-header-contact-btn">
-      <ContactButton />
+      <Button to="/contact" variant="primary">Contactez-moi</Button>
     </div>
     <div
       className="home-aquarelle-bg-section"

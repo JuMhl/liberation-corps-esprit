@@ -3,6 +3,7 @@ import SEO from '@/components/seo/SEO.jsx';
 import phone from '@/assets/logos/phone.svg';
 import email from '@/assets/logos/email.png';
 import './Contact.scss';
+import Button from '@/components/button/Button.jsx';
 const Contact = () => (
   <div className="contact">
     <SEO
@@ -26,7 +27,7 @@ const Contact = () => (
         </div>
         <div className="contact-calendly-block">
           <h2 className="contact-calendly-title">✨ Ou réservez directement en ligne :</h2>
-          <a className="contact-btn" href="http://cal.com/catherine-charleux/" target="_blank" rel="noopener noreferrer">Prendre rendez-vous</a>
+          <Button as="a" href="http://cal.com/catherine-charleux/" target="_blank" rel="noopener noreferrer" variant="primary">Prendre rendez-vous</Button>
         </div>
       </div>
       <div className="contact-newsletter-block">
@@ -42,7 +43,7 @@ const Contact = () => (
             <div className="contact-form-group"><label htmlFor="email">Email *</label><input type="email" name="email" id="email" placeholder="Votre email" required autoComplete="email" /></div>
             <div className="contact-form-group"><label htmlFor="phone">Numéro (optionnel)</label><input type="tel" name="phone" id="phone" placeholder="Votre numéro" autoComplete="tel" pattern="^(\+33|0)[1-9](\d{2}){4}$" title="Veuillez entrer un numéro français valide" /></div>
           </div>
-            <button type="submit" className="contact-btn">S'inscrire</button>
+            <Button type="submit" variant="secondary">S'inscrire</Button>
         </form>
       </div>
     </div>

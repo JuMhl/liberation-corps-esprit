@@ -1,0 +1,82 @@
+@use '../../styles/constantes' as *;
+
+.custom-button {
+  --btn-bg: $primary-color;
+  --btn-bg-hover: $secondary-color;
+  --btn-color: #fff;
+  --btn-border: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: .3px;
+  padding: 0.7rem 1.55rem;
+  border-radius: 6px;
+  text-decoration: none;
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: 2px solid var(--btn-border);
+  cursor: pointer;
+  position: relative;
+  transition: background .25s ease, transform .25s ease, box-shadow .35s ease, color .25s ease, border-color .25s ease;
+  box-shadow: 0 4px 14px -3px rgba(44,150,150,0.45);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--btn-bg-hover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px -2px rgba(178,144,182,0.55);
+    text-decoration: none;
+  }
+
+  &:active { transform: translateY(0); }
+  &:focus-visible { outline: 2px solid rgba(178,144,182,0.5); outline-offset: 2px; }
+  &:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+
+  &--secondary {
+    // Style outline : contour secondary, fond transparent, remplissage au survol
+    --btn-bg: transparent;
+    --btn-color: $secondary-color;
+    --btn-border: $secondary-color;
+    --btn-bg-hover: $secondary-color; // utilisé par le hover global mais on redéfinit aussi pour clarté
+    background: transparent;
+    border: 1px solid $secondary-color;
+    color: $secondary-color;
+    box-shadow: 0 4px 14px -4px rgba(178,144,182,0.28);
+    &:hover,
+    &:focus-visible {
+      background: $secondary-color;
+      color: #fff;
+      box-shadow: 0 6px 18px -4px rgba(178,144,182,0.45);
+    }
+  }
+
+  // Explicit primary variant (rétablit l'ancien style si une cascade a modifié les vars)
+  &--primary {
+  --btn-bg: $primary-color;
+  --btn-color: #fff;
+  --btn-border: transparent;
+  background: $primary-color; // fallback dur
+  color: #fff;
+  border: none;
+    &:hover,
+    &:focus-visible {
+      background: $secondary-color;
+    }
+  }
+
+  &--sm { font-size: .85rem; padding: .5rem 1rem; }
+  &--lg { font-size: 1.15rem; padding: .85rem 1.9rem; }
+
+  @media (max-width: 650px) {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.25rem;
+  }
+}
