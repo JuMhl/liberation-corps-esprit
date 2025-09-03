@@ -25,7 +25,7 @@ const NotFound = () => {
             Page introuvable
           </h1>
           <p className="not-found__text">
-            La page que vous cherchez n'existe pas (ou plus). Elle a peut‑être changé de nom,
+            La page que vous cherchez n'existe pas (ou plus). Elle a peut-être changé de nom,
             été déplacée… ou n'a jamais existé.
           </p>
           <div className="not-found__actions">
@@ -37,7 +37,7 @@ const NotFound = () => {
               <li><Link to="/programme">Programme</Link></li>
               <li><Link to="/accompagnements">Accompagnements</Link></li>
               <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/kateri-creations">Kateri‑Créations</Link></li>
+              <li><Link to="/kateri-creations">Kateri-Créations</Link></li>
             </ul>
           </nav>
         </div>
