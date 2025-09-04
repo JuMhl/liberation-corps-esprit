@@ -6,6 +6,7 @@ import Caroussel from '@/components/caroussel/Caroussel.jsx';
 import ShareButtons from '@/components/share/ShareButtons.jsx';
 import SEO from '@/components/seo/SEO.jsx';
 import Button from '@/components/button/Button.jsx';
+import Loader from '@/components/loader/Loader.jsx';
 import './Blog.scss';
 const ArticlePage = () => {
   const { slug } = useParams();
@@ -40,7 +41,7 @@ const ArticlePage = () => {
   if (loading)
     return (
       <div className="article-page">
-        <div className="loading">Chargement de l'article...</div>
+        <Loader text="Chargement de l'article..." />
       </div>
     );
   if (error)

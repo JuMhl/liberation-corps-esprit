@@ -4,6 +4,7 @@ import Button from '@/components/button/Button.jsx';
 import ReactMarkdown from 'react-markdown';
 import { getProgrammes } from '@/utils/getProgrammes';
 import './Programme.scss';
+import Loader from '@/components/loader/Loader.jsx';
 const Programme = () => {
   const [currentProgramme, setCurrentProgramme] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -25,27 +26,46 @@ const Programme = () => {
       <SEO
         title={currentProgramme?.title ? `Programme - ${currentProgramme.title}` : 'Programme'}
         description="Programme des séances : relaxation, voyages sonores, massages vibratoires et ateliers bien-être à Fréjus / Saint-Raphaël. Inscription nécessaire."
-        jsonLd={currentProgramme ? {
-          '@context': 'https://schema.org',
-          '@type': 'Event',
-          name: currentProgramme.title,
-          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-          eventStatus: 'https://schema.org/EventScheduled'
-        } : null}
+        jsonLd={
+          currentProgramme
+            ? {
+                '@context': 'https://schema.org',
+                '@type': 'Event',
+                name: currentProgramme.title,
+                eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+                eventStatus: 'https://schema.org/EventScheduled'
+              }
+            : null
+        }
       />
       <div className="programme-content">
         <div className="programme-text">
           <div className="activities">
-            {loading ? <p>Chargement du programme...</p> : currentProgramme ? <>
-              {currentProgramme.title ? <h2>{currentProgramme.title}</h2> : null}
-              <ReactMarkdown>{currentProgramme.content}</ReactMarkdown>
-              {currentProgramme.image && <div className="programme-image"><img src={currentProgramme.image} alt={currentProgramme.title} /></div>}
-            </> : <p>Aucun programme disponible pour le moment.</p>}
+            {loading ? (
+              <Loader text="Chargement du programme..." />
+            ) : currentProgramme ? (
+              <>
+                {currentProgramme.title ? <h2>{currentProgramme.title}</h2> : null}
+                <ReactMarkdown>{currentProgramme.content}</ReactMarkdown>
+                {currentProgramme.image && (
+                  <div className="programme-image">
+                    <img src={currentProgramme.image} alt={currentProgramme.title} />
+                  </div>
+                )}
+              </>
+            ) : (
+              <p>Aucun programme disponible pour le moment.</p>
+            )}
             <div className="btn-container">
-              <Button to="/contact" variant="primary">Contactez-moi</Button>
+              <Button to="/contact" variant="primary">
+                Contactez-moi
+              </Button>
             </div>
           </div>
-          <p className="note">✨ Toutes les activités se font sur inscription, les places sont limitées pour préserver l'intimité et la qualité de chaque rencontre.</p>
+          <p className="note">
+            ✨ Toutes les activités se font sur inscription, les places sont limitées pour préserver l'intimité et la
+            qualité de chaque rencontre.
+          </p>
         </div>
       </div>
     </div>
