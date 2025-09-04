@@ -1,0 +1,141 @@
+@use '../../styles/constantes' as *;
+
+.share-block {
+  margin: 3rem 0 1rem;
+  padding: .9rem .75rem 1.1rem;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba($primary-color,0.05), rgba($secondary-color,0.05));
+  box-shadow: 0 4px 14px -6px rgba(0,0,0,0.15);
+  position: relative;
+  backdrop-filter: blur(2px);
+  
+  &::after { /* léger halo interne */
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 20%, rgba($primary-color,0.12), transparent 70%);
+    mix-blend-mode: multiply;
+    opacity: .55;
+  }
+
+  .share-buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    justify-content: center;
+  }
+
+  .share-btn {
+    --c: $primary-color;
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: .4rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: transform .25s, background .25s, box-shadow .25s;
+    line-height: 1;
+    aspect-ratio: 1/1;
+    width: 46px;
+    height: 46px;
+    isolation: isolate;
+
+    &:hover,
+    &:focus-visible {
+      transform: scale(1.12);
+      background: rgba(0,0,0,0.05);
+    }
+    &:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
+    &:active { transform: scale(0.95); }
+
+  /* Normalisation visuelle */
+  line-height: 0; /* supprime l'influence de la ligne de base texte */
+  font-size: 0; /* évite espaces fantômes inline */
+    .icon-wrapper {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+    }
+    svg, img { width: 100%; height: 100%; display: block; object-fit: contain; margin: 0; }
+  &.mail img { width: 28px; height: 28px; padding: 2px; box-sizing: content-box; }
+  &.copy { position: relative; }
+    &.copy .copy-badge {
+      position: absolute;
+      top: 2px; /* badge un peu plus haut mais réduit l'effet de décalage global */
+      right: 2px;
+      background: $secondary-color;
+      color: #fff;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 2px #fff;
+      animation: popIn .35s ease;
+    }
+
+    &.fb { --c: #1877F2; }
+    &.ln { --c: #0A66C2; }
+    &.tw { --c: #000000; }
+    &.wa { --c: #25D366; }
+    &.mail { --c: #444444; }
+    &.copy { --c: $secondary-color; }
+    &.native { --c: $primary-color; width: auto; padding: .35rem .75rem; border-radius: 999px; gap: .25rem; }
+    &.native svg { width: 22px; height: 22px; }
+    /* Accentuation légère pour le bouton partager */
+    &.native {
+      background: rgba(0,0,0,0.05); /* même style que le hover global actuel */
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 2px 4px -2px rgba(0,0,0,.18);
+      transition: background .25s, box-shadow .25s, transform .2s;
+    }
+    &.native:hover,
+    &.native:focus-visible {
+      background: rgba(0,0,0,0.08);
+      box-shadow: 0 3px 8px -4px rgba(0,0,0,.30), 0 2px 4px -1px rgba(0,0,0,.18);
+    }
+    &.native:active {
+      transform: scale(.95);
+      box-shadow: 0 1px 3px -1px rgba(0,0,0,.35);
+    }
+  }
+
+  .share-btn.copy { font-size: .8rem; background: transparent; }
+  .share-btn.copy .icon-wrapper { transform: translateY(5px); }
+
+  .native-label { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .copy-status { margin-top: .4rem; font-size: .7rem; color: $secondary-color; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(.4); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
