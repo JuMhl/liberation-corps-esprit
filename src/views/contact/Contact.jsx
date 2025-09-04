@@ -27,7 +27,7 @@ const Contact = () => (
         </div>
         <div className="contact-calendly-block">
           <h2 className="contact-calendly-title">✨ Ou réservez directement en ligne :</h2>
-          <Button as="a" href="http://cal.com/catherine-charleux/" target="_blank" rel="noopener noreferrer" variant="primary">Prendre rendez-vous</Button>
+          <Button as="a" href="https://tidycal.com/ccharleux83" target="_blank" rel="noopener noreferrer" variant="primary">Prendre rendez-vous</Button>
         </div>
       </div>
       <div className="contact-newsletter-block">
