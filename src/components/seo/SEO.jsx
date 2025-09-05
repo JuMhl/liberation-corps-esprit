@@ -82,8 +82,10 @@ const SEO = ({ title, description, image, type = 'website', jsonLd, canonical, n
       document.head.appendChild(robots);
     }
     const directives = [];
-    if (noindex) directives.push('noindex'); else directives.push('index');
-    if (nofollow) directives.push('nofollow'); else directives.push('follow');
+    if (noindex) directives.push('noindex');
+    else directives.push('index');
+    if (nofollow) directives.push('nofollow');
+    else directives.push('follow');
     robots.setAttribute('content', directives.join(', '));
 
     // Canonical link
@@ -107,7 +109,8 @@ const SEO = ({ title, description, image, type = 'website', jsonLd, canonical, n
       document.head.appendChild(script);
     };
 
-    if (Array.isArray(jsonLd)) jsonLd.forEach(inject); else if (jsonLd) inject(jsonLd);
+    if (Array.isArray(jsonLd)) jsonLd.forEach(inject);
+    else if (jsonLd) inject(jsonLd);
   }, [pageTitle, description, type, fullUrl, ogImage, jsonLd]);
 
   return null; // head side-effects only

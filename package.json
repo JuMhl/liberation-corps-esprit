@@ -17,8 +17,9 @@
   "scripts": {
   "dev": "vite",
   "generate:articles": "node scripts/generate-article-pages.cjs",
+  "generate:articles:after": "node scripts/generate-article-pages.cjs --afterBuild",
   "prebuild": "npm run generate:articles",
-  "build": "vite build",
+  "build": "vite build && npm run generate:articles:after",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

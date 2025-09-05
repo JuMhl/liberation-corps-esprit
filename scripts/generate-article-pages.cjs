@@ -1,7 +1,9 @@
 /*
- * Génère une page HTML statique par article markdown afin que Facebook / LinkedIn (qui ne rendent pas le JS) récupèrent
- * correctement les meta OG (titre, description, image) et l'URL canonique de l'article.
- * Les fichiers sont créés sous: public/blog/<slug>/index.html avant le build Vite.
+ * Génère une page HTML statique par article markdown (Open Graph / Twitter / LinkedIn).
+ * Deux modes:
+ *  - Pré-build (par défaut): pages minimalistes avec meta (pas d'injection d'assets encore inconnus).
+ *  - Post-build (--afterBuild): réécrit les pages en injectant les assets (link rel=stylesheet + script type=module) extraits de dist/index.html.
+ * Ajoute og:site_name, og:locale, article:published_time, et fb:app_id (si présent dans l'env: VITE_FB_APP_ID ou FB_APP_ID).
  */
 
 const fs = require('fs');
@@ -11,6 +13,11 @@ const matter = require('gray-matter');
 const BASE_URL = process.env.VITE_SITE_URL || 'https://liberationducorpsetdelesprit.fr';
 const SRC_ARTICLES_DIR = path.join(process.cwd(), 'src', 'content', 'articles');
 const PUBLIC_BLOG_DIR = path.join(process.cwd(), 'public', 'blog');
+const DIST_DIR = path.join(process.cwd(), 'dist');
+const AFTER_BUILD = process.argv.includes('--afterBuild');
+// Répertoire de sortie: avant build -> public/blog (copié ensuite par Vite), après build -> dist/blog (pages finales avec assets)
+const OUTPUT_BLOG_DIR = AFTER_BUILD ? path.join(DIST_DIR, 'blog') : PUBLIC_BLOG_DIR;
+const FB_APP_ID = process.env.VITE_FB_APP_ID || process.env.FB_APP_ID; // optionnel
 
 function ensureDir(p) {
   if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
@@ -29,6 +36,18 @@ function stripMarkdown(md) {
     .trim();
 }
 
+function extractBuiltAssets() {
+  if (!AFTER_BUILD) return null;
+  const distIndex = path.join(DIST_DIR, 'index.html');
+  if (!fs.existsSync(distIndex)) return null;
+  const html = fs.readFileSync(distIndex, 'utf8');
+  const headLinks = [...html.matchAll(/<link[^>]+rel="stylesheet"[^>]*>/g)].map((m) => m[0]);
+  const moduleScripts = [...html.matchAll(/<script[^>]+type="module"[^>]*><\/script>/g)].map((m) => m[0]);
+  return { headLinks, moduleScripts };
+}
+
+const builtAssets = extractBuiltAssets();
+
 function buildHtml({ slug, title, description, image, date }) {
   const canonical = `${BASE_URL.replace(/\/$/, '')}/blog/${slug}`;
   const ogImage = image?.startsWith('http')
@@ -46,10 +65,11 @@ function buildHtml({ slug, title, description, image, date }) {
     author: { '@type': 'Person', name: 'Catherine Charleux' },
     mainEntityOfPage: canonical
   };
-  const safeBody = `<article class=\"ssr-article\"><h1>${escapeHtml(title)}</h1><p>${escapeHtml(
+  const safeBody = `<article class="ssr-article"><h1>${escapeHtml(title)}</h1><p>${escapeHtml(
     description
-  )}</p><p><a href=\"/\">Accueil</a></p></article>`;
-
+  )}</p></article>`;
+  const assetLinks = builtAssets?.headLinks?.length ? builtAssets.headLinks.join('\n    ') : '';
+  const assetScripts = builtAssets?.moduleScripts?.length ? builtAssets.moduleScripts.join('\n    ') : '';
   return `<!doctype html>
 <html lang="fr">
   <head>
@@ -58,39 +78,26 @@ function buildHtml({ slug, title, description, image, date }) {
     <title>${escapeHtml(pageTitle)}</title>
     <link rel="canonical" href="${canonical}" />
     <meta name="description" content="${escapeHtml(description)}" />
+    <meta property="og:site_name" content="Libération du Corps et de l’Esprit" />
+    <meta property="og:locale" content="fr_FR" />
     <meta property="og:title" content="${escapeHtml(pageTitle)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="${canonical}" />
     <meta property="og:image" content="${ogImage}" />
-    ${date ? `<meta property=\"article:published_time\" content=\"${date}\" />` : ''}
-    <meta property="og:site_name" content="Libération du Corps et de l’Esprit" />
-    <meta property="og:locale" content="fr_FR" />
     ${date ? `<meta property="article:published_time" content="${date}" />` : ''}
+    ${FB_APP_ID ? `<meta property="fb:app_id" content="${FB_APP_ID}" />` : ''}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(pageTitle)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
     <meta name="twitter:image" content="${ogImage}" />
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <script>
-      // Charge dynamiquement le bundle Vite généré (premier script type=module trouvé dans /index.html)
-      (function(){
-        fetch('/index.html').then(r=>r.text()).then(html=>{
-          const scripts=[...html.matchAll(/<script[^>]+type=\\"module\\"[^>]+src=\\"([^\\"]+)\\"/g)];
-          if(scripts.length){
-            const main=scripts[0][1];
-            const s=document.createElement('script');
-            s.type='module';
-            s.src=main;
-            document.body.appendChild(s);
-          }
-        }).catch(()=>{});
-      })();
-    </script>
+    ${assetLinks}
   </head>
   <body>
     <div id="root">${safeBody}</div>
+    ${assetScripts}
   </body>
 </html>`;
 }
@@ -109,7 +116,7 @@ function run() {
     console.warn('Aucun dossier articles trouvé:', SRC_ARTICLES_DIR);
     return;
   }
-  ensureDir(PUBLIC_BLOG_DIR);
+  ensureDir(OUTPUT_BLOG_DIR);
 
   const files = fs.readdirSync(SRC_ARTICLES_DIR).filter((f) => f.endsWith('.md'));
   let count = 0;
@@ -127,7 +134,7 @@ function run() {
         image: data.image,
         date: data.date
       });
-      const outDir = path.join(PUBLIC_BLOG_DIR, slug);
+      const outDir = path.join(OUTPUT_BLOG_DIR, slug);
       ensureDir(outDir);
       fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf8');
       count++;
@@ -135,7 +142,7 @@ function run() {
       console.error('Erreur génération pour', file, e);
     }
   });
-  console.log(`Pages articles générées: ${count}`);
+  console.log(`Pages articles générées (${AFTER_BUILD ? 'post-build' : 'pre-build'}): ${count}`);
 }
 
 run();

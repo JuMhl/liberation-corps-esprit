@@ -83,7 +83,7 @@ const ArticlePage = () => {
         description={article.content?.substring(0, 150).replace(/\n/g, ' ') + '...'}
         image={article.image}
         type="article"
-  canonical={`/blog/${slug}`}
+        canonical={`/blog/${slug}`}
         jsonLd={jsonLd}
       />
       {article.image && (
