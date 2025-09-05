@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
     <link rel="canonical" href="https://liberationducorpsetdelesprit.fr/" />
     <meta name="description" content="Catherine Charleux vous accompagne dans la Libération du corps et de l'esprit par le mouvement et le son." />
     <link rel="apple-touch-icon" href="/logo-2025.png" />
@@ -23,6 +24,16 @@
     </script>
   </head>
   <body>
+    <script>
+      // Fix mobile 100vh issues: define --app-vh = 1% of visual viewport height
+      function setAppVh() {
+        const vh = window.visualViewport ? window.visualViewport.height * 0.01 : window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--app-vh', `${vh}px`);
+      }
+      setAppVh();
+      window.addEventListener('resize', setAppVh);
+      window.addEventListener('orientationchange', function(){ setTimeout(setAppVh, 100); });
+    </script>
     <div id="root"></div>
     <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="newsletter" />

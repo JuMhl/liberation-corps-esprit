@@ -70,7 +70,9 @@ function buildHtml({ slug, title, description, image, date }) {
     author: { '@type': 'Person', name: 'Catherine Charleux' },
     mainEntityOfPage: canonical
   };
-  const safeBody = `<article class=\"ssr-article\"><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p></article>`;
+  const safeBody = `<article class=\"ssr-article\"><h1>${escapeHtml(title)}</h1><p>${escapeHtml(
+    description
+  )}</p></article>`;
   if (AFTER_BUILD && baseIndexHtml) {
     let html = baseIndexHtml;
     // Title
@@ -78,7 +80,10 @@ function buildHtml({ slug, title, description, image, date }) {
     // Canonical
     html = html.replace(/<link[^>]+rel="canonical"[^>]*>/i, `<link rel=\"canonical\" href=\"${canonical}\" />`);
     // Remove existing dynamic metas (description + og + twitter + article + fb)
-    html = html.replace(/\n?\s*<meta[^>]+(name|property)="(description|og:[^"]+|twitter:[^"]+|article:[^"]+|fb:app_id)"[^>]*>/g, '');
+    html = html.replace(
+      /\n?\s*<meta[^>]+(name|property)="(description|og:[^"]+|twitter:[^"]+|article:[^"]+|fb:app_id)"[^>]*>/g,
+      ''
+    );
     // Inject after title
     const metas = [
       `<meta name=\"description\" content=\"${escapeHtml(description)}\" />`,
@@ -96,14 +101,34 @@ function buildHtml({ slug, title, description, image, date }) {
       `<meta name=\"twitter:description\" content=\"${escapeHtml(description)}\" />`,
       `<meta name=\"twitter:image\" content=\"${ogImage}\" />`,
       `<script type=\"application/ld+json\">${JSON.stringify(jsonLd)}<\/script>`
-    ].filter(Boolean).join('\n    ');
+    ]
+      .filter(Boolean)
+      .join('\n    ');
     html = html.replace(/<title>[\s\S]*?<\/title>/i, (m) => `${m}\n    ${metas}`);
     // Root placeholder SSR minimal
     html = html.replace(/<div id=\"root\"><\/div>/, `<div id=\"root\">${safeBody}</div>`);
     return html;
   }
   // Fallback (pre-build)
-  return `<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>${escapeHtml(pageTitle)}</title>\n    <link rel=\"canonical\" href=\"${canonical}\" />\n    <meta name=\"description\" content=\"${escapeHtml(description)}\" />\n    <meta property=\"og:site_name\" content=\"Libération du Corps et de l’Esprit\" />\n    <meta property=\"og:locale\" content=\"fr_FR\" />\n    <meta property=\"og:title\" content=\"${escapeHtml(pageTitle)}\" />\n    <meta property=\"og:description\" content=\"${escapeHtml(description)}\" />\n    <meta property=\"og:type\" content=\"article\" />\n    <meta property=\"og:url\" content=\"${canonical}\" />\n    <meta property=\"og:image\" content=\"${ogImage}\" />\n    ${date ? `<meta property=\\"article:published_time\\" content=\\"${escapeHtml(date)}\\" />` : ''}\n    ${FB_APP_ID ? `<meta property=\\"fb:app_id\\" content=\\"${FB_APP_ID}\\" />` : ''}\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />\n    <meta name=\"twitter:title\" content=\"${escapeHtml(pageTitle)}\" />\n    <meta name=\"twitter:description\" content=\"${escapeHtml(description)}\" />\n    <meta name=\"twitter:image\" content=\"${ogImage}\" />\n    <script type=\"application/ld+json\">${JSON.stringify(jsonLd)}<\/script>\n  </head>\n  <body>\n    <div id=\"root\">${safeBody}</div>\n  </body>\n</html>`;
+  return `<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>${escapeHtml(
+    pageTitle
+  )}</title>\n    <link rel=\"canonical\" href=\"${canonical}\" />\n    <meta name=\"description\" content=\"${escapeHtml(
+    description
+  )}\" />\n    <meta property=\"og:site_name\" content=\"Libération du Corps et de l’Esprit\" />\n    <meta property=\"og:locale\" content=\"fr_FR\" />\n    <meta property=\"og:title\" content=\"${escapeHtml(
+    pageTitle
+  )}\" />\n    <meta property=\"og:description\" content=\"${escapeHtml(
+    description
+  )}\" />\n    <meta property=\"og:type\" content=\"article\" />\n    <meta property=\"og:url\" content=\"${canonical}\" />\n    <meta property=\"og:image\" content=\"${ogImage}\" />\n    ${
+    date ? `<meta property=\\"article:published_time\\" content=\\"${escapeHtml(date)}\\" />` : ''
+  }\n    ${
+    FB_APP_ID ? `<meta property=\\"fb:app_id\\" content=\\"${FB_APP_ID}\\" />` : ''
+  }\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />\n    <meta name=\"twitter:title\" content=\"${escapeHtml(
+    pageTitle
+  )}\" />\n    <meta name=\"twitter:description\" content=\"${escapeHtml(
+    description
+  )}\" />\n    <meta name=\"twitter:image\" content=\"${ogImage}\" />\n    <script type=\"application/ld+json\">${JSON.stringify(
+    jsonLd
+  )}<\/script>\n  </head>\n  <body>\n    <div id=\"root\">${safeBody}</div>\n  </body>\n</html>`;
 }
 
 function escapeHtml(str) {

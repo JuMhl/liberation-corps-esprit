@@ -2,11 +2,13 @@
 
 .programme {
   min-height: calc(100vh - 110px);
+  min-height: calc((var(--app-vh, 1vh) * 100) - 110px);
   padding: 2rem;
   overflow-x: hidden;
 
   @media (max-width: 650px) {    
     min-height: calc(100vh - 75px);
+    min-height: calc((var(--app-vh, 1vh) * 100) - 75px);
     padding: 1rem;
   }
 }
@@ -142,4 +144,9 @@
       }
     }
   }
+}
+
+@supports (height: 100dvh) {
+  .programme { min-height: calc(100dvh - 110px); }
+  @media (max-width: 650px) { .programme { min-height: calc(100dvh - 75px); } }
 }
