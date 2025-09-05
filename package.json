@@ -15,8 +15,10 @@
     "sass": "^1.91.0"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+  "dev": "vite",
+  "generate:articles": "node scripts/generate-article-pages.cjs",
+  "prebuild": "npm run generate:articles",
+  "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

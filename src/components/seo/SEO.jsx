@@ -31,9 +31,9 @@ const SEO = ({ title, description, image, type = 'website', jsonLd, canonical, n
   useEffect(() => {
     document.title = pageTitle;
 
-    const setMeta = (name, attr, value) => {
+    const setMetaName = (name, value) => {
       if (!value) return;
-      let el = document.head.querySelector(`${attr}[name='${name}']`);
+      let el = document.head.querySelector(`meta[name='${name}']`);
       if (!el) {
         el = document.createElement('meta');
         el.setAttribute('name', name);
@@ -53,12 +53,22 @@ const SEO = ({ title, description, image, type = 'website', jsonLd, canonical, n
       el.setAttribute('content', content);
     };
 
-    setMeta('description', 'name', description);
+    setMetaName('description', description);
     setProperty('og:title', pageTitle);
     setProperty('og:description', description);
     setProperty('og:type', type);
     setProperty('og:url', fullUrl);
     setProperty('og:image', ogImage);
+    setProperty('og:site_name', BRAND);
+    setProperty('og:locale', 'fr_FR');
+    if (type === 'article') {
+      let published;
+      if (jsonLd) {
+        const src = Array.isArray(jsonLd) ? jsonLd[0] : jsonLd;
+        published = src && (src.datePublished || src.dateCreated);
+      }
+      if (published) setProperty('article:published_time', published);
+    }
     setProperty('twitter:card', 'summary_large_image');
     setProperty('twitter:title', pageTitle);
     setProperty('twitter:description', description);

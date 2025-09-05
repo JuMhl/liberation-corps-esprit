@@ -83,6 +83,7 @@ const ArticlePage = () => {
         description={article.content?.substring(0, 150).replace(/\n/g, ' ') + '...'}
         image={article.image}
         type="article"
+  canonical={`/blog/${slug}`}
         jsonLd={jsonLd}
       />
       {article.image && (
@@ -98,6 +99,7 @@ const ArticlePage = () => {
           title={article.title}
           text={article.content?.substring(0, 140).replace(/\n/g, ' ')}
           image={article.image}
+          url={`https://liberationducorpsetdelesprit.fr/blog/${slug}`}
         />
         {article.gallery && article.gallery.length > 0 && (
           <div className="article-gallery">

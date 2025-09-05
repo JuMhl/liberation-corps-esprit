@@ -23,7 +23,6 @@ const Blog = () => {
   }, []);
   const formatDate = (d) =>
     d ? new Date(d).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
-  // Ancienne version supprimée (variant). On ne conserve que le nouveau rendu plus bas.
   if (loading) {
     return (
       <div className="blog">
