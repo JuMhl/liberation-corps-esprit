@@ -13,7 +13,7 @@ const matter = require('gray-matter');
 const BASE_URL = process.env.VITE_SITE_URL || 'https://liberationducorpsetdelesprit.fr';
 const SRC_ARTICLES_DIR = path.join(process.cwd(), 'src', 'content', 'articles');
 const PUBLIC_BLOG_DIR = path.join(process.cwd(), 'public', 'blog');
-const DIST_DIR = path.join(process.cwd(), 'dist');
+const DIST_DIR = path.join(process.cwd(), 'build'); // outDir défini dans vite.config.js
 const AFTER_BUILD = process.argv.includes('--afterBuild');
 // Répertoire de sortie: avant build -> public/blog (copié ensuite par Vite), après build -> dist/blog (pages finales avec assets)
 const OUTPUT_BLOG_DIR = AFTER_BUILD ? path.join(DIST_DIR, 'blog') : PUBLIC_BLOG_DIR;
@@ -47,6 +47,11 @@ function extractBuiltAssets() {
 }
 
 const builtAssets = extractBuiltAssets();
+let baseIndexHtml = null;
+if (AFTER_BUILD) {
+  const idx = path.join(DIST_DIR, 'index.html');
+  if (fs.existsSync(idx)) baseIndexHtml = fs.readFileSync(idx, 'utf8');
+}
 
 function buildHtml({ slug, title, description, image, date }) {
   const canonical = `${BASE_URL.replace(/\/$/, '')}/blog/${slug}`;
@@ -65,41 +70,40 @@ function buildHtml({ slug, title, description, image, date }) {
     author: { '@type': 'Person', name: 'Catherine Charleux' },
     mainEntityOfPage: canonical
   };
-  const safeBody = `<article class="ssr-article"><h1>${escapeHtml(title)}</h1><p>${escapeHtml(
-    description
-  )}</p></article>`;
-  const assetLinks = builtAssets?.headLinks?.length ? builtAssets.headLinks.join('\n    ') : '';
-  const assetScripts = builtAssets?.moduleScripts?.length ? builtAssets.moduleScripts.join('\n    ') : '';
-  return `<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${escapeHtml(pageTitle)}</title>
-    <link rel="canonical" href="${canonical}" />
-    <meta name="description" content="${escapeHtml(description)}" />
-    <meta property="og:site_name" content="Libération du Corps et de l’Esprit" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:title" content="${escapeHtml(pageTitle)}" />
-    <meta property="og:description" content="${escapeHtml(description)}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="${canonical}" />
-    <meta property="og:image" content="${ogImage}" />
-    ${date ? `<meta property="article:published_time" content="${date}" />` : ''}
-    ${FB_APP_ID ? `<meta property="fb:app_id" content="${FB_APP_ID}" />` : ''}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${escapeHtml(pageTitle)}" />
-    <meta name="twitter:description" content="${escapeHtml(description)}" />
-    <meta name="twitter:image" content="${ogImage}" />
-    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    ${assetLinks}
-  </head>
-  <body>
-    <div id="root">${safeBody}</div>
-    ${assetScripts}
-  </body>
-</html>`;
+  const safeBody = `<article class=\"ssr-article\"><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p></article>`;
+  if (AFTER_BUILD && baseIndexHtml) {
+    let html = baseIndexHtml;
+    // Title
+    html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(pageTitle)}</title>`);
+    // Canonical
+    html = html.replace(/<link[^>]+rel="canonical"[^>]*>/i, `<link rel=\"canonical\" href=\"${canonical}\" />`);
+    // Remove existing dynamic metas (description + og + twitter + article + fb)
+    html = html.replace(/\n?\s*<meta[^>]+(name|property)="(description|og:[^"]+|twitter:[^"]+|article:[^"]+|fb:app_id)"[^>]*>/g, '');
+    // Inject after title
+    const metas = [
+      `<meta name=\"description\" content=\"${escapeHtml(description)}\" />`,
+      `<meta property=\"og:site_name\" content=\"Libération du Corps et de l’Esprit\" />`,
+      `<meta property=\"og:locale\" content=\"fr_FR\" />`,
+      `<meta property=\"og:title\" content=\"${escapeHtml(pageTitle)}\" />`,
+      `<meta property=\"og:description\" content=\"${escapeHtml(description)}\" />`,
+      `<meta property=\"og:type\" content=\"article\" />`,
+      `<meta property=\"og:url\" content=\"${canonical}\" />`,
+      `<meta property=\"og:image\" content=\"${ogImage}\" />`,
+      date ? `<meta property=\"article:published_time\" content=\"${escapeHtml(date)}\" />` : null,
+      FB_APP_ID ? `<meta property=\"fb:app_id\" content=\"${FB_APP_ID}\" />` : null,
+      `<meta name=\"twitter:card\" content=\"summary_large_image\" />`,
+      `<meta name=\"twitter:title\" content=\"${escapeHtml(pageTitle)}\" />`,
+      `<meta name=\"twitter:description\" content=\"${escapeHtml(description)}\" />`,
+      `<meta name=\"twitter:image\" content=\"${ogImage}\" />`,
+      `<script type=\"application/ld+json\">${JSON.stringify(jsonLd)}<\/script>`
+    ].filter(Boolean).join('\n    ');
+    html = html.replace(/<title>[\s\S]*?<\/title>/i, (m) => `${m}\n    ${metas}`);
+    // Root placeholder SSR minimal
+    html = html.replace(/<div id=\"root\"><\/div>/, `<div id=\"root\">${safeBody}</div>`);
+    return html;
+  }
+  // Fallback (pre-build)
+  return `<!doctype html>\n<html lang=\"fr\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>${escapeHtml(pageTitle)}</title>\n    <link rel=\"canonical\" href=\"${canonical}\" />\n    <meta name=\"description\" content=\"${escapeHtml(description)}\" />\n    <meta property=\"og:site_name\" content=\"Libération du Corps et de l’Esprit\" />\n    <meta property=\"og:locale\" content=\"fr_FR\" />\n    <meta property=\"og:title\" content=\"${escapeHtml(pageTitle)}\" />\n    <meta property=\"og:description\" content=\"${escapeHtml(description)}\" />\n    <meta property=\"og:type\" content=\"article\" />\n    <meta property=\"og:url\" content=\"${canonical}\" />\n    <meta property=\"og:image\" content=\"${ogImage}\" />\n    ${date ? `<meta property=\\"article:published_time\\" content=\\"${escapeHtml(date)}\\" />` : ''}\n    ${FB_APP_ID ? `<meta property=\\"fb:app_id\\" content=\\"${FB_APP_ID}\\" />` : ''}\n    <meta name=\"twitter:card\" content=\"summary_large_image\" />\n    <meta name=\"twitter:title\" content=\"${escapeHtml(pageTitle)}\" />\n    <meta name=\"twitter:description\" content=\"${escapeHtml(description)}\" />\n    <meta name=\"twitter:image\" content=\"${ogImage}\" />\n    <script type=\"application/ld+json\">${JSON.stringify(jsonLd)}<\/script>\n  </head>\n  <body>\n    <div id=\"root\">${safeBody}</div>\n  </body>\n</html>`;
 }
 
 function escapeHtml(str) {
