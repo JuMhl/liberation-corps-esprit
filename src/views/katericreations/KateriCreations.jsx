@@ -118,16 +118,18 @@ const KateriCreations = () => {
           )}
         </div>
 
-        <h3>🌙 Une prolongation naturelle de mon accompagnement</h3>
-        <p>
-          Ces objets ne sont pas de simples décorations. Ils portent une mémoire vibratoire, une énergie douce et
-          bienveillante. Ils peuvent t'accompagner dans un processus de guérison, marquer un passage important dans ta
-          vie, ou simplement créer un espace sacré chez toi.
-          <br />
-          <br />
-          Chaque création est reliée à mon travail thérapeutique et énergétique. Elle prolonge mon approche de
-          reconnexion au corps, au souffle, à l'instant.
-        </p>
+        <div className="kc-extension">
+          <h3>🌙 Une prolongation naturelle de mon accompagnement</h3>
+          <p>
+            Ces objets ne sont pas de simples décorations. Ils portent une mémoire vibratoire, une énergie douce et
+            bienveillante. Ils peuvent t'accompagner dans un processus de guérison, marquer un passage important dans ta
+            vie, ou simplement créer un espace sacré chez toi.
+            <br />
+            <br />
+            Chaque création est reliée à mon travail thérapeutique et énergétique. Elle prolonge mon approche de
+            reconnexion au corps, au souffle, à l'instant.
+          </p>
+        </div>
         <div className="signature">
           <h4>🪶 Signature</h4>
           <p>
