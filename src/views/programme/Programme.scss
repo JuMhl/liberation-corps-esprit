@@ -68,6 +68,19 @@
         }
       }
     }
+    
+    // Center the programme image horizontally within the activities block
+    .programme-image {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+    }
     .btn-container {
       margin-top: 1.25rem;
     }
