@@ -6,7 +6,7 @@ import { getProgrammes } from '@/utils/getProgrammes';
 import './Programme.scss';
 import Loader from '@/components/loader/Loader.jsx';
 
-// Helpers to build valid JSON-LD Event
+// Helpers for JSON-LD and display
 const BASE_URL = import.meta.env.VITE_SITE_URL || 'https://liberationducorpsetdelesprit.fr';
 const absUrl = (url) => {
   if (!url) return undefined;
@@ -48,76 +48,25 @@ const Programme = () => {
     loadProgramme();
   }, []);
 
-  const eventJsonLd = useMemo(() => {
-    const e = currentProgramme;
-    if (!e) return null;
-
-    // Required fields
-    const startDate = toIso(e.date || e.startDate);
-    const name = e.title || (e.date ? `Programme ${monthYear(e.date)}` : undefined);
-
-    // Build location
-    let location;
-    let attendanceMode = 'https://schema.org/OfflineEventAttendanceMode';
-    if (e.online) {
-      attendanceMode = 'https://schema.org/OnlineEventAttendanceMode';
-      if (e.virtual_url) {
-        location = { '@type': 'VirtualLocation', url: absUrl(e.virtual_url) };
-      }
-    } else if (e.location && (e.location.name || e.location.addressLocality || e.location.streetAddress)) {
-      location = {
-        '@type': 'Place',
-        name: e.location.name || [e.location.addressLocality, e.location.addressRegion].filter(Boolean).join(', '),
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: e.location.streetAddress || undefined,
-          addressLocality: e.location.addressLocality || undefined,
-          postalCode: e.location.postalCode || undefined,
-          addressRegion: e.location.addressRegion || undefined,
-          addressCountry: e.location.addressCountry || 'FR'
-        }
-      };
-    }
-
-    // Only inject when we have the minimum required fields
-    if (!name || !startDate || !location) return null;
-
-    const offers =
-      e.price != null
-        ? {
-            '@type': 'Offer',
-            url: absUrl(e.bookingUrl) || absUrl('/programme'),
-            price: String(e.price),
-            priceCurrency: e.currency || 'EUR',
-            availability: e.availability || 'https://schema.org/InStock'
-          }
-        : undefined;
-
-    const performer =
-      Array.isArray(e.performer) && e.performer.length
-        ? e.performer.map((p) => ({ '@type': 'Person', name: typeof p === 'string' ? p : p?.name }))
-        : undefined;
-
-    const organizer = {
-      '@type': 'Organization',
-      name: e.organizer_name || 'Libération du Corps et de l’Esprit',
-      url: absUrl(e.organizer_url) || BASE_URL
-    };
-
+  // Use WebPage (or CollectionPage) JSON-LD so this page is NOT treated as an Event
+  const pageJsonLd = useMemo(() => {
+    const name = currentProgramme?.title
+      ? `Programme - ${currentProgramme.title}`
+      : currentProgramme?.date
+      ? `Programme - ${monthYear(currentProgramme.date)}`
+      : 'Programme';
+    const url = absUrl('/programme');
+    const image = currentProgramme?.image ? absUrl(currentProgramme.image) : undefined;
     return {
       '@context': 'https://schema.org',
-      '@type': 'Event',
+      '@type': 'WebPage',
       name,
-      description: e.excerpt || undefined,
-      startDate,
-      endDate: toIso(e.endDate),
-      eventStatus: 'https://schema.org/EventScheduled',
-      eventAttendanceMode: attendanceMode,
-      image: e.image ? [absUrl(e.image)] : undefined,
-      location,
-      organizer,
-      performer,
-      offers
+      description:
+        'Programme des séances : relaxation, voyages sonores, massages vibratoires et ateliers bien-être à Fréjus / Saint-Raphaël. Inscription nécessaire.',
+      url,
+      isPartOf: { '@type': 'WebSite', name: 'Libération du Corps et de l’Esprit', url: BASE_URL },
+      primaryImageOfPage: image ? { '@type': 'ImageObject', url: image } : undefined,
+      datePublished: currentProgramme?.date ? toIso(currentProgramme.date) : undefined
     };
   }, [currentProgramme]);
   return (
@@ -131,7 +80,7 @@ const Programme = () => {
             : 'Programme'
         }
         description="Programme des séances : relaxation, voyages sonores, massages vibratoires et ateliers bien-être à Fréjus / Saint-Raphaël. Inscription nécessaire."
-        jsonLd={eventJsonLd}
+        jsonLd={pageJsonLd}
       />
       <div className="programme-content">
         <div className="programme-text">

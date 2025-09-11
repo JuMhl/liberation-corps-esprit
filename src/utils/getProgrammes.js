@@ -15,16 +15,6 @@ export function getProgrammes() {
           slug,
           title: frontmatter.title,
           date: frontmatter.date,
-          endDate: frontmatter.endDate,
-          online: frontmatter.online,
-          virtual_url: frontmatter.virtual_url,
-          location: frontmatter.location,
-          price: frontmatter.price,
-          currency: frontmatter.currency,
-          bookingUrl: frontmatter.bookingUrl,
-          performer: frontmatter.performer,
-          organizer_name: frontmatter.organizer_name,
-          organizer_url: frontmatter.organizer_url,
           content: markdownContent,
           image: frontmatter.image
         };
