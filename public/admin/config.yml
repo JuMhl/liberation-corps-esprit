@@ -29,7 +29,49 @@ collections:
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: 'Titre (optionnel)', name: 'title', widget: 'string', required: false }
-      - { label: 'Date', name: 'date', widget: 'datetime' }
+      - { label: 'Titre (nom de l’événement)', name: 'title', widget: 'string', required: false }
+      - {
+          label: 'Date de début',
+          name: 'date',
+          widget: 'datetime',
+          required: true,
+          hint: 'Inclure l’heure si possible'
+        }
+      - { label: 'Date de fin (optionnel)', name: 'endDate', widget: 'datetime', required: false }
+      - { label: 'Image (recommandée)', name: 'image', widget: 'image', required: false }
+      - { label: 'Événement en ligne ?', name: 'online', widget: 'boolean', default: false, required: false }
+      - { label: 'URL de l’événement en ligne (si en ligne)', name: 'virtual_url', widget: 'string', required: false }
+      - label: 'Lieu (si présentiel)'
+        name: 'location'
+        widget: 'object'
+        required: false
+        fields:
+          - { label: 'Nom du lieu', name: 'name', widget: 'string', required: false }
+          - { label: 'Adresse', name: 'streetAddress', widget: 'string', required: false }
+          - { label: 'Ville', name: 'addressLocality', widget: 'string', required: false }
+          - { label: 'Code postal', name: 'postalCode', widget: 'string', required: false }
+          - { label: 'Région', name: 'addressRegion', widget: 'string', required: false }
+          - { label: 'Pays', name: 'addressCountry', widget: 'string', required: false, default: 'FR' }
+      - { label: 'Prix (optionnel)', name: 'price', widget: 'number', required: false, value_type: 'float' }
+      - { label: 'Devise', name: 'currency', widget: 'string', required: false, default: 'EUR' }
+      - { label: 'URL de réservation (optionnel)', name: 'bookingUrl', widget: 'string', required: false }
+      - label: 'Intervenant·e(s) (optionnel)'
+        name: 'performer'
+        widget: 'list'
+        required: false
+        field: { label: 'Nom', name: 'name', widget: 'string' }
+      - {
+          label: 'Organisateur (optionnel)',
+          name: 'organizer_name',
+          widget: 'string',
+          required: false,
+          default: 'Libération du Corps et de l’Esprit'
+        }
+      - {
+          label: 'URL organisateur (optionnel)',
+          name: 'organizer_url',
+          widget: 'string',
+          required: false,
+          default: 'https://liberationducorpsetdelesprit.fr'
+        }
       - { label: 'Contenu (optionnel)', name: 'body', widget: 'markdown', required: false }
-      - { label: 'Image (optionnel)', name: 'image', widget: 'image', required: false }
