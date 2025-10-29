@@ -1,7 +1,7 @@
 ---
 title: 5 croyances qui entretiennent ton stress sans que tu t’en rendes compte
 date: 2025-09-16T08:25:36.139Z
-image: /uploads/post-blog-harmonie-interieure-4-940-x-788-px-.png
+image: /uploads/post-facebook-harmonie-interieure-4-1600-x-896-px-.png
 ---
 Nous vivons dans une société où le rythme s’accélère sans cesse. Entre travail, famille, obligations, nous essayons de tout gérer… et bien souvent, nous nous mettons nous-mêmes une pression supplémentaire.
 
