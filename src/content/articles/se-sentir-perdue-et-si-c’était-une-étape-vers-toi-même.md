@@ -1,7 +1,7 @@
 ---
 title: "Se sentir perdue : et si c’était une étape vers toi-même ?"
 date: 2025-10-22T09:19:16.048Z
-image: /uploads/visuel_revenir_a_soi_blog.png
+image: /uploads/_post-blog-se-sentir-perdue-940-x-788-px-.png
 ---
 Il y a des moments dans la vie où plus rien ne semble clair.\
 Ce que tu faisais avant ne t’anime plus, ce que tu croyais vouloir ne te correspond plus vraiment.\
