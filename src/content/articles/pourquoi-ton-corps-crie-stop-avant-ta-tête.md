@@ -1,7 +1,7 @@
 ---
 title: Pourquoi ton corps crie stop avant ta tête
 date: 2025-09-26T07:57:17.081Z
-image: /uploads/visuel_ton_corps_te_parle.png
+image: /uploads/visuel-blog-ton-corps-te-parle-940-x-788-px-.png
 ---
 On croit souvent que l’esprit décide de tout. Que si « dans la tête ça va », le corps doit suivre. Mais la réalité est bien différente : le corps, lui, ne triche pas. Il parle. Il crie même parfois, bien avant que l’esprit ne reconnaisse qu’il y a un problème.
 
