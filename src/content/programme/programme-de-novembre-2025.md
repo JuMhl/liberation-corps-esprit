@@ -1,7 +1,7 @@
 ---
 title: Programme de novembre 2025
 date: 2025-10-22T09:24:36.510Z
-image: /uploads/réseaux-sociaux-programme-novembre-2025.png
+image: /uploads/réseaux-sociaux-programme-novembre-2025-.png
 ---
 En novembre, je vous invite à **relâcher la pression**, à déposer ce qui pèse encore sur les épaules, et à retrouver un **esprit plus léger dans un corps détendu**.
 
