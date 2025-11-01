@@ -94,6 +94,9 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: clip;
 
   .article-header-image {
     width: 100%;
@@ -112,6 +115,9 @@
 
   .article-content {
     color: $basic-text-color;
+    /* Avoid long words/URLs pushing layout horizontally */
+    overflow-wrap: anywhere;
+    word-break: break-word;
 
     h1 {
       color: $primary-color;
@@ -186,5 +192,12 @@
         background-color: $secondary-color;
       }
     }
+  }
+}
+
+/* Mobile tweaks to reduce padding and avoid accidental overflow */
+@media (max-width: 650px) {
+  .article-page {
+    padding: 1rem;
   }
 }
