@@ -1,10 +1,8 @@
 ---
 title: "Les Bols Chantants : Origine, Mythe et Réalité"
 date: 2025-10-15T16:32:52.675Z
-image: /uploads/bol_mythe_ou_realite.png
+image: /uploads/bol_chantant_mythe_ou_realite.png
 ---
-
-
 # 🕉️Un instrument entouré de mystère
 
 Le **bol chantant tibétain**, célèbre pour sa sonorité vibrante et ses vertus apaisantes, est souvent présenté comme un objet chargé de sagesse millénaire.\
@@ -78,6 +76,4 @@ C’est l’arrivée des **voyageurs occidentaux** au Népal dans les années 19
 * *Quelles sont les mystères Origines du Bol Tibétain ?* — instruments-du-monde.com
 * *Bol chantant* — Wikipédia
 * *Économie et ressources minières du Tibet* — Wikipédia, TibetDoc
-* Études et observations de **Michel Nur**, années 1970
-
-<!--EndFragment-->
+* Études et observations de **Michel Nur**, années 1970.
