@@ -8,7 +8,7 @@ const NatureSession = () => (
       <p className="nature-session__text">
         Et si le chemin du mieux-être passait aussi par la nature&nbsp;?
         <br />
-        Quand les conditions s'y prêtent, je propose <strong>certains soins et séances en extérieur</strong>.
+        Quand les conditions s'y prêtent, nous proposons <strong>certains soins et séances en extérieur</strong>.
         <br />
         En forêt, près d'un ruisseau, sur une colline ou au bord de la mer…
         <br />

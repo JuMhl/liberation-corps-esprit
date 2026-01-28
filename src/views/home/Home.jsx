@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '@/components/seo/SEO.jsx';
 import logo from '@/assets/logos/logo_nu_fond_transparent.png';
-import portraitAcceuil from '@/assets/photos/portrait-zen-esterel.jpg';
+import portraitAcceuil from '@/assets/photos/Philippe_et_Catherine.jpg';
 import aquarelle from '@/assets/photos/aquarelle.jpg';
 import StageBanner from '@/components/home/stage-banner/StageBanner.jsx';
 import CardsAccompaniement from '@/components/home/cards-accompaniement/CardsAccompaniement.jsx';
@@ -54,15 +54,14 @@ const Home = () => (
         </div>
         <div className="home-header-text">
           <p>
-            Spécialisée dans la gestion du <strong>stress</strong> et l'accompagnement des personnes en quête
-            d'apaisement, j'accueille celles qui traversent une période de <strong>mal-être</strong>, de{' '}
-            <strong>fatigue émotionnelle</strong> ou de <strong>perte de sens</strong>, et je les guide avec douceur{' '}
-            <strong>vers un mieux-être global</strong>.
+            Nous avons créé cette association afin de partager, d'échanger nos connaissances avec vous, lors de
+            conférences et d'ateliers sur l'énergétique, l'hypnose, les sciences de la nature (telles que phytothérapie,
+            lithothérapie, géobiologie…), la sonothérapie, qui nous accompagnent à chaque instant de notre vie.
           </p>
           <p>
             Chaque rendez-vous est une bulle de présence,{' '}
-            <strong>une pause bienveillante pour revenir à soi, relâcher les tensions</strong> et laisser émerger ce
-            qui a besoin d'être entendu, accueilli et transformé.
+            <strong>une pause bienveillante pour revenir à soi, relâcher les tensions</strong> et laisser émerger ce qui
+            a besoin d'être entendu, accueilli et transformé.
           </p>
         </div>
       </div>
@@ -71,7 +70,9 @@ const Home = () => (
       </div>
     </div>
     <div className="home-header-contact-btn">
-      <Button to="/contact" variant="primary">Contactez-moi</Button>
+      <Button to="/contact" variant="primary">
+        Contactez nous
+      </Button>
     </div>
     <div
       className="home-aquarelle-bg-section"
@@ -83,27 +84,21 @@ const Home = () => (
     >
       <div className="home-aquarelle-bg-text">
         <p>
-          Il arrive un moment où l'on ne sait plus très bien où l'on va.
-          <br />
-          Où l'on porte trop, où l'on respire à moitié.
-          <br />
-          Dans ces instants-là, je tends la main.
+          Il arrive un moment où l'on ne sait plus très bien où l'on va. Où on ne se sent plus en accord avec soi-même
+          et nos convictions face au monde extérieur.
         </p>
+        <br />
         <p>
-          <strong>Mon rôle :</strong> ouvrir un passage doux entre le tumulte et la paix.
-          <br />
-          Un espace où l'on peut, enfin, se retrouver.
+          Notre rôle : ouvrir un espace de dialogue et de connaissance afin de vous permettre de retrouver un équilibre
+          et une écoute.
         </p>
-        <p>Je guide les femmes en période de fatigue, de transition ou de trop-plein, vers un mieux-être global.</p>
+        <br />
         <p>
-          Mon accompagnement les aide à relâcher les tensions du corps, à apaiser le mental, et à se reconnecter à qui
-          elles sont profondément.
+          Parce que nous avons nous-mêmes traversé des épreuves et des moments de doute qui nous ont conduit à
+          expérimenter différentes approches que nous mettons à votre disposition lors de conférences, ateliers et
+          accompagnements en groupe ou individuel.
         </p>
-        <p>
-          Parce que j'ai moi-même traversé l'épuisement et le désalignement, j'ai à cœur de créer un espace doux, où
-          l'on peut enfin respirer, déposer, et revenir à soi.
-        </p>
-        <p className="signature">Catherine Charleux</p>
+        <p className="signature">Catherine Charleux et Philippe Feroul</p>
       </div>
     </div>
     <CardsAccompaniement />

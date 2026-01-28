@@ -2,7 +2,8 @@ import matter from 'gray-matter';
 
 // Vite replacement for webpack require.context using import.meta.glob
 export function getArticles() {
-  const modules = import.meta.glob('../content/articles/*.md', { query: '?raw', import: 'default' });
+  // Use Vite's `as: 'raw'` option to get file contents as strings.
+  const modules = import.meta.glob('../content/articles/*.md', { as: 'raw' });
 
   return Promise.all(
     Object.entries(modules).map(async ([path, loader]) => {

@@ -102,7 +102,7 @@ const Programme = () => {
             )}
             <div className="btn-container">
               <Button to="/contact" variant="primary">
-                Contactez-moi
+                Contactez nous
               </Button>
             </div>
           </div>

@@ -195,7 +195,7 @@ export default function Accompagnements() {
               <div className="accordion-content" style={{ display: openIdx === idx ? 'block' : 'none' }}>
                 {item.description}
                 <Button to="/contact" variant="primary">
-                  Contactez-moi
+                  Contactez nous
                 </Button>
               </div>
             </div>
