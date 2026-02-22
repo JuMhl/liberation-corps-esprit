@@ -17,30 +17,29 @@ const accompagnements = [
         </p>
         <p>
           La relaxation bio-dynamique est une invitation à revenir dans le corps, en douceur, pour libérer ce qui a
-          besoin de l’être. Elle agit en profondeur, sur les tensions musculaires, mais aussi émotionnelles et
+          besoin de l'être. Elle agit en profondeur, sur les tensions musculaires, mais aussi émotionnelles et
           énergétiques.
         </p>
-        <strong>Déroulement d’une séance</strong>
-        <ul>
+        <strong className="section-title">Déroulement d'une séance</strong>
+        <ul className="section-subtitle">
           <li>Séance de 1h15, en petit groupe (max 6 pers.), adaptée à vos besoins.</li>
           <li>Accueil, temps d’échange, reconnexion à soi par la respiration.</li>
           <li>Mouvements doux, étirements, automassages, relaxation guidée au sol.</li>
           <li>Final avec instruments (bol, carillons), retour progressif, échanges.</li>
         </ul>
-        <strong>Bienfaits</strong>
-        <ul>
+        <strong className="section-title">Bienfaits</strong>
+        <ul className="section-subtitle">
           <li>Profonde détente physique et mentale</li>
           <li>Libération des tensions accumulées</li>
           <li>Respiration plus fluide et naturelle</li>
           <li>Ancrage, apaisement émotionnel, reconnexion à soi</li>
         </ul>
-        <strong>Pour qui ?</strong>
-        <ul>
+        <strong className="section-title">Pour qui ?</strong>
+        <ul className="section-subtitle">
           <li>Personnes tendues, épuisées, en transition ou en quête de reconnexion</li>
         </ul>
         <div className="chips">
           <span className="chip">1h à 1h30</span>
-          <span className="chip">16€ / pers (groupe)</span>
           <span className="chip">Saint-Raphaël & environs</span>
         </div>
       </>
@@ -57,26 +56,25 @@ const accompagnements = [
           délicatement sur le corps habillé, chaque vibration invite à un relâchement physique, émotionnel et
           énergétique.
         </p>
-        <strong>Déroulement d’une séance</strong>
-        <ul>
+        <strong className="section-title">Déroulement d'une séance</strong>
+        <ul className="section-subtitle">
           <li>Accueil, ancrage, massage au bol sur le ventre puis le dos.</li>
           <li>Complément possible avec d’autres instruments selon vos besoins.</li>
           <li>Temps d’échange et verre d’eau (ou autre) en fin de séance.</li>
         </ul>
-        <strong>Bienfaits</strong>
-        <ul>
+        <strong className="section-title">Bienfaits</strong>
+        <ul className="section-subtitle">
           <li>Détente profonde, libération des tensions, rééquilibrage énergétique</li>
-          <li>Meilleur sommeil, clarté d’esprit, paix intérieure</li>
+          <li>Meilleur sommeil, clarté d'esprit, paix intérieure</li>
         </ul>
-        <strong>Contre-indications</strong>
-        <ul>
+        <strong className="section-title">Contre-indications</strong>
+        <ul className="section-subtitle">
           <li>Femmes enceintes de moins de 4 mois</li>
           <li>Personnes porteuses d’un pacemaker</li>
           <li>Pathologies lourdes (sur avis médical)</li>
         </ul>
         <div className="chips">
           <span className="chip">1h15 à 1h30</span>
-          <span className="chip">A partir de 70€</span>
           <span className="chip">Cabinet ou domicile</span>
         </div>
       </>
@@ -92,54 +90,66 @@ const accompagnements = [
           Le voyage sonore est un moment de lâcher-prise total, une exploration intérieure guidée par le son (bols
           chantants, tambours, carillons, flûte, voix…).
         </p>
-        <strong>Déroulement</strong>
-        <ul>
+        <strong className="section-title">Déroulement</strong>
+        <ul className="section-subtitle">
           <li>Petit groupe (max 6 pers.), accueil, météo intérieure, installation confortable.</li>
           <li>Voyage sonore guidé, instruments variés, temps de partage en fin de séance.</li>
         </ul>
-        <strong>Bienfaits</strong>
-        <ul>
+        <strong className="section-title">Bienfaits</strong>
+        <ul className="section-subtitle">
           <li>Lâcher-prise, apaisement du mental, détente du système nerveux</li>
           <li>Reconnexion au corps, nettoyage énergétique subtil</li>
         </ul>
         <div className="chips">
           <span className="chip">1h à 1h30</span>
-          <span className="chip">A partir de 20€ / pers</span>
           <span className="chip">Individuel ou collectif</span>
         </div>
       </>
     )
   },
   {
-    icon: '💖',
-    title: 'Harmonie intérieure (accompagnement sur 4 séances)',
+    icon: '🙏',
+    title: 'Accompagnements Holistiques',
     description: (
       <>
-        <strong>Un accompagnement profond pour retrouver ton équilibre corps–cœur–esprit</strong>
+        <strong>
+          Reconnection aux énergies de la nature, exploration au travers des plantes, des pierres, de la géobiologie, de
+          la géométrie sacrée et du magnétisme, un chemin vers la lumière.
+        </strong>
         <p>
-          Fatigue chronique, tensions persistantes, mental envahissant… Cet accompagnement est une parenthèse pour toi,
-          un chemin de reconnexion à ton corps, à ton souffle, à ce qui t’anime profondément.
+          Un apprentissage et une ouverture vers nos anciennes connaissances afin de redécouvrir son énergie intérieure
+          et son ressenti.
         </p>
-        <strong>Ce que je te propose</strong>
-        <ul>
-          <li>4 séances individuelles sur mesure (1h à 1h30 chacune) sur 12 semaines max</li>
-          <li>Soutien bienveillant entre les séances</li>
-          <li>Ressources bien-être : vidéo, méditations audio, e-book, canal WhatsApp privé</li>
-        </ul>
-        <strong>Pour qui ?</strong>
-        <ul>
-          <li>Femmes en trop-plein, en transition, en quête de sens ou de reconnexion</li>
-        </ul>
-        <strong>Présentiel ou à distance</strong>
-        <ul>
-          <li>Présentiel : agit sur le corps, libère les tensions, favorise l’ancrage</li>
-          <li>Distanciel : ouvre à des prises de conscience subtiles et puissantes</li>
-        </ul>
-        <div className="chips">
-          <span className="chip">4 séances sur 9 à 12 semaines</span>
-          <span className="chip">Présentiel ou à distance</span>
-          <span className="chip">Saint-Raphaël ou nature</span>
-        </div>
+        <strong className="section-title">Conférences et soirées thématiques</strong>
+        <p className="section-subtitle">
+          Par des conférences sur des thèmes divers ou soirées thématiques de dialogue et d'échange.
+        </p>
+        <strong className="section-title">Stages</strong>
+        <p className="section-subtitle">
+          Nous vous proposerons divers stages de 1 à 3 jours sur des thèmes reliés à la nature ou aux énergies pour vous
+          permettre une reconnexion profonde et une transmission de connaissance.
+        </p>
+        <strong className="section-title">Ateliers</strong>
+        <p className="section-subtitle">
+          Pratique holistique en phytothérapie, lithothérapie, géométrie sacrée et divers autres thèmes afin de se
+          reconnecter à soi-même et aux autres.
+        </p>
+        <strong className="section-title">Soins individuels</strong>
+        <p className="section-subtitle">
+          Je vous propose de reprendre le contrôle de votre vie et de vos ressentis en vous libérant de vos blocages.
+          Mes formations en énergétique, pnl, hypnose, hypnose régressive, me permettent de vous accompagner de façon
+          personnalisée afin de vous aider à vous défaire de vos croyances limitantes de vos liens toxiques et autres.
+        </p>
+        <strong className="section-title">Vos lieux de vie</strong>
+        <p className="section-subtitle">
+          Je propose également des nettoyages de vos maisons (géobiologie, énergétique, entités)
+        </p>
+        <strong className="section-title">En conclusion</strong>
+        <p className="section-subtitle">
+          Nous pouvons après des années d'expérimentation et d'apprentissage, vous partager nos connaissances, échanger,
+          et vous accompagner en groupe ou individuellement. L'échange et la connaissance vous donne le savoir, une
+          ouverture vers une autre dimension à la redécouverte de vous-même et des autres.
+        </p>
       </>
     )
   }

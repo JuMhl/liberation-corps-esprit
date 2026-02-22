@@ -1,0 +1,100 @@
+@use '../../../styles/constantes' as *;
+
+.a-propos-philippe {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+
+  &__container {
+    width: 100%;
+    max-width: 900px;
+    padding: 36px 32px 28px 32px;
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
+  &__section {
+    margin-bottom: 32px;
+    animation: slideInUp 0.6s ease-out forwards;
+
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+    &:nth-child(5) {
+      animation-delay: 0.4s;
+    }
+
+    &--closing {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 2px solid rgba(62, 92, 92, 0.15);
+    }
+  }
+
+  &__block {
+    p {
+      line-height: 1.8;
+      color: $basic-text-color;
+      text-align: justify;
+      font-size: 1.05em;
+      margin: 0;
+
+      br {
+        content: '';
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  }
+
+  &__emphasis {
+    display: block;
+    margin-top: 12px;
+    padding-left: 20px;
+    color: $primary-color;
+    font-style: italic;
+    font-weight: 500;
+    border-left: 3px solid $primary-color;
+  }
+
+  @media (max-width: 650px) {
+    &__container {
+      padding: 25px 16px 14px 16px;
+    }
+
+    &__section {
+      margin-bottom: 24px;
+
+      &--closing {
+        margin-top: 32px;
+        padding-top: 16px;
+      }
+    }
+
+    &__block p {
+      font-size: 1em;
+    }
+
+    &__emphasis {
+      border-left-width: 2px;
+      padding-left: 16px;
+    }
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

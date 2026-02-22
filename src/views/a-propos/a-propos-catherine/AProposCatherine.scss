@@ -12,58 +12,6 @@
     animation: fadeIn 0.5s ease-in forwards;
   }
 
-  &__chooser {
-    margin-top: 50px;
-  }
-
-  &__chooser-intro {
-    text-align: center;
-    font-size: 1.2em;
-    color: $basic-text-color;
-    margin-bottom: 40px;
-    font-weight: 500;
-  }
-
-  &__chooser-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  &__link {
-    display: block;
-    padding: 32px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, rgba(62, 92, 92, 0.05) 0%, rgba(62, 92, 92, 0.02) 100%);
-    border: 2px solid rgba(62, 92, 92, 0.15);
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(60, 80, 80, 0.08);
-
-    &:hover {
-      border-color: $primary-color;
-      background: linear-gradient(135deg, rgba(62, 92, 92, 0.1) 0%, rgba(62, 92, 92, 0.05) 100%);
-      box-shadow: 0 4px 16px rgba(60, 80, 80, 0.15);
-      transform: translateY(-2px);
-    }
-
-    h2 {
-      color: $primary-color;
-      font-size: 1.4em;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    p {
-      color: $basic-text-color;
-      font-size: 1em;
-      line-height: 1.6;
-    }
-  }
-
   &__intro, &__transition, &__nature {
     margin-bottom: 22px;
     line-height: 1.7;
@@ -115,23 +63,6 @@
     & {
       font-size: 1rem;
       padding: 0 5px;
-    }
-    &__chooser {
-      margin-top: 30px;
-    }
-    &__chooser-intro {
-      font-size: 1.05em;
-      margin-bottom: 25px;
-    }
-    &__chooser-links {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    &__link {
-      padding: 24px;
-      h2 {
-        font-size: 1.2em;
-      }
     }
   }
 }

@@ -79,6 +79,26 @@
   li {
     text-align: left;
   }
+
+  .section-title {
+    display: block;
+    font-size: 1.1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+    font-weight: 600;
+  }
+
+  .section-title:first-of-type {
+    margin-top: 0;
+  }
+
+  .section-subtitle {
+    font-style: italic;
+    color: #666666;
+    margin-bottom: 1rem;
+    text-align: justify;
+  }
 }
 
 .chips {

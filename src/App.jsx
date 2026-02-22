@@ -5,6 +5,8 @@ import Home from '@/views/home/Home.jsx';
 import Accompagnements from '@/views/accompagnements/Accompagnements.jsx';
 import KateriCreations from '@/views/katericreations/KateriCreations.jsx';
 import APropos from '@/views/a-propos/APropos.jsx';
+import AProposCatherine from '@/views/a-propos/a-propos-catherine/AProposCatherine.jsx';
+import AProposPhilippe from '@/views/a-propos/a-propos-philippe/AProposPhilippe.jsx';
 import Contact from '@/views/contact/Contact.jsx';
 import Programme from '@/views/programme/Programme.jsx';
 import Blog from '@/views/blog/Blog.jsx';
@@ -23,6 +25,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/programme" element={<Programme />} />
             <Route path="/a-propos" element={<APropos />} />
+            <Route path="/a-propos/catherine" element={<AProposCatherine />} />
+            <Route path="/a-propos/philippe" element={<AProposPhilippe />} />
             <Route path="/accompagnements" element={<Accompagnements />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<ArticlePage />} />
