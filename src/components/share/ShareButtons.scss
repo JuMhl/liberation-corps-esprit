@@ -116,7 +116,13 @@
   .share-btn.copy { font-size: .8rem; background: transparent; }
   .share-btn.copy .icon-wrapper { transform: translateY(5px); }
 
-  .native-label { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+  .native-label { 
+    font-size: .75rem; 
+    font-weight: 600; 
+    letter-spacing: .5px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
 
   .sr-only {
     position: absolute;
