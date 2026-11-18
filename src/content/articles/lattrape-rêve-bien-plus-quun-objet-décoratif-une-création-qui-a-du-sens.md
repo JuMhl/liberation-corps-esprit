@@ -126,5 +126,3 @@ Pas besoin d'être particulièrement habile ou créatif. Il suffit d'avoir envie
 Voilà ce que j'ai envie de partager à travers cet atelier.
 
 *Libération du corps et de l'esprit*
-
-<!--EndFragment-->
